@@ -44,3 +44,13 @@
     cursor: pointer;
   }
 }
+
+.imageContainer {
+  @include flexCenter();
+  img {
+    cursor: pointer;
+  }
+  img:nth-child(1) {
+    margin-right: 4rem;
+  }
+}

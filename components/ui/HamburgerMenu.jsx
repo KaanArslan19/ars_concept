@@ -47,6 +47,20 @@ const HamburgerMenu = ({ navbarItems }) => {
                 </Link>
               </li>
             ))}
+            <div className={classes.imageContainer}>
+              <Image
+                src="/images/turkey_flag.png"
+                width={24}
+                height={24}
+                alt="turkey_flag"
+              />
+              <Image
+                src="/images/great_britain_flag.png"
+                width={24}
+                height={24}
+                alt="great_britain_flag"
+              />
+            </div>
           </ul>
         </div>
       )}

@@ -1,10 +1,10 @@
-import Navbar from "@/components/constants/Navbar";
+import Layout from "@/components/layouts/Layout";
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
   return (
-    <Navbar>
+    <Layout>
       <Component {...pageProps} />
-    </Navbar>
+    </Layout>
   );
 }

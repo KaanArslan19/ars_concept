@@ -1,7 +1,12 @@
+import Slider from "../ui/Slider";
 import classes from "./Home.module.scss";
 
-const Home = () => {
-  return <div className={classes.container}>Home</div>;
+const Home = ({ listings }) => {
+  return (
+    <div className={classes.container}>
+      <Slider listings={listings} />
+    </div>
+  );
 };
 
 export default Home;

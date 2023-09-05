@@ -33,7 +33,7 @@ const Navbar = () => {
           <ul className={classes.listItems}>
             {navbarItems.map((item) => (
               <li key={`link-${item.title}`}>
-                <Link href={`/${item.url}`}>{item.title}</Link>
+                <Link href={`${item.url}`}>{item.title}</Link>
               </li>
             ))}
           </ul>
