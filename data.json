@@ -21,9 +21,9 @@
   {
     "id": "th3",
     "title": "Fuerte",
+    "description": "description text",
     "type": "üçgen",
     "totalArea": "35",
-    "description": "description text",
     "imgUrl": "/images/houses/Okitsu/O_19.jpg",
     "price": 2500
   }

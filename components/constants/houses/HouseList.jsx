@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import classes from "./HouseList.module.scss";
 import HouseItem from "./HouseItem";
 const HouseList = ({ listings }) => {
-  console.log(listings);
   return (
     <Fragment>
       <div className={classes.listContainer}>

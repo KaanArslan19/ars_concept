@@ -1,0 +1,27 @@
+[
+  {
+    "id": "b1",
+    "date": "10/07/2023",
+    "title": "Değirmendere Şelalesi",
+    "description": "İzmir’in Menderes ilçesine bağlı Değirmendere Köyü’nün sınırları içinde bulunan ve ismini de köyden alan Değirmendere Şelalesi, kent merkezine çok yakın bir konumda olmasına rağmen sizi şehrin sıkıcı ve gri atmosferinden tamamen uzaklaştırabilecek bir ortama sahip. Yaklaşık 5-6 metre yükseklikten çam ağaçlarıyla bezeli bir alana dökülen şelale, şehirden uzaklaşıp biraz doğayla baş başa vakit geçirmek isteyenler için harika bir rota oluşturuyor. Özellikle havanın güzel olduğu günlerde ve hafta sonlarında ziyaretçi akınına uğrayan Değirmendere Şelalesi, doğa yürüyüşü tutkunları tarafından da çok sık tercih edilen bir nokta.",
+    "type": "historical",
+    "imgUrl": "/images/houses/Satsuma/S_18.jpg"
+  },
+  {
+    "id": "b2",
+    "date": "10/07/2023",
+    "title": "Değirmendere Şelalesi",
+    "description": "İzmir’in Menderes ilçesine bağlı Değirmendere Köyü’nün sınırları içinde bulunan ve ismini de köyden alan Değirmendere Şelalesi, kent merkezine çok yakın bir konumda olmasına rağmen sizi şehrin sıkıcı ve gri atmosferinden tamamen uzaklaştırabilecek bir ortama sahip. Yaklaşık 5-6 metre yükseklikten çam ağaçlarıyla bezeli bir alana dökülen şelale, şehirden uzaklaşıp biraz doğayla baş başa vakit geçirmek isteyenler için harika bir rota oluşturuyor. Özellikle havanın güzel olduğu günlerde ve hafta sonlarında ziyaretçi akınına uğrayan Değirmendere Şelalesi, doğa yürüyüşü tutkunları tarafından da çok sık tercih edilen bir nokta.",
+    "type": "entertainment",
+    "imgUrl": "/images/houses/Okitsu/O_19.jpg"
+  },
+
+  {
+    "id": "b3",
+    "date": "10/07/2023",
+    "title": "Değirmendere Şelalesi",
+    "description": "İzmir’in Menderes ilçesine bağlı Değirmendere Köyü’nün sınırları içinde bulunan ve ismini de köyden alan Değirmendere Şelalesi, kent merkezine çok yakın bir konumda olmasına rağmen sizi şehrin sıkıcı ve gri atmosferinden tamamen uzaklaştırabilecek bir ortama sahip. Yaklaşık 5-6 metre yükseklikten çam ağaçlarıyla bezeli bir alana dökülen şelale, şehirden uzaklaşıp biraz doğayla baş başa vakit geçirmek isteyenler için harika bir rota oluşturuyor. Özellikle havanın güzel olduğu günlerde ve hafta sonlarında ziyaretçi akınına uğrayan Değirmendere Şelalesi, doğa yürüyüşü tutkunları tarafından da çok sık tercih edilen bir nokta.",
+    "type": "historical",
+    "imgUrl": "/images/houses/Okitsu/O_19.jpg"
+  }
+]

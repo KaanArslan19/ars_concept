@@ -26,7 +26,7 @@ const HouseItem = (props) => {
 
           <div className={classes.rowContainer}>
             <BiArea className={classes.icon} />
-            Net Alan: <span>{props.totalArea}</span>
+            Net Alan: <span>{props.totalArea}m2</span>
           </div>
           <div className={classes.rowContainer}>
             <BiMoney className={classes.icon} />

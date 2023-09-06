@@ -1,0 +1,45 @@
+@import "../../../styles/mixins";
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 2rem 0;
+
+  h2 {
+    padding-bottom: 0.2rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid var(--color-primary-light);
+  }
+}
+.content {
+  @include flexCenter();
+  flex-direction: column;
+
+  span {
+    max-width: 80%;
+    margin-bottom: 0.5rem;
+  }
+}
