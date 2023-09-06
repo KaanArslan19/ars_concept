@@ -3,7 +3,7 @@
 .container {
   @include flexCenter();
   padding: 2rem;
-  background: var(--color-gray);
+  background: var(--color-primary-light);
   font-family: "Poppins", sans-serif;
 }
 
@@ -12,6 +12,7 @@
 
   li {
     padding-right: 1rem;
+    color: var(--color-primary-logo);
   }
 }
 
@@ -30,6 +31,5 @@
 }
 
 .logo {
-  background-color: #fff;
   border-radius: 50%;
 }

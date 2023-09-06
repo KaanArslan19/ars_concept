@@ -10,9 +10,7 @@ import SwiperCore, {
 import "swiper/css/bundle";
 import { useRouter } from "next/router";
 const Slider = ({ listings }) => {
-  const namesArray = listings.map((obj) => obj.imgUrl);
   SwiperCore.use([Autoplay, Navigation, Pagination]);
-  console.log(namesArray[0]);
   const router = useRouter();
   return (
     <>
@@ -27,7 +25,7 @@ const Slider = ({ listings }) => {
         {listings.map((item) => (
           <SwiperSlide
             key={item.id}
-            onClick={() => router.push(`listings/${item.type}/${item.id}`)}
+            onClick={() => router.push(`listings/${item.title}`)}
           >
             <div
               style={{

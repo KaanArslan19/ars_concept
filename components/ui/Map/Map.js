@@ -4,25 +4,30 @@ import { useMediaQuery } from "react-responsive";
 import { icon } from "leaflet";
 
 const ICON = icon({
-  iconUrl: "/marker-icon.png",
-  iconSize: [25, 40],
+  iconUrl: "/images/hotel-marker-icon.png",
+  iconSize: [30, 40],
 });
 const Map = () => {
   return (
     <MapContainer
-      center={[38.06204, 27.026746]}
-      zoom={17}
+      center={[38.063472, 27.028338]}
+      zoom={14}
       scrollWheelZoom={false}
       style={{
         width: "100%",
-        height: "175px",
+        height: "300px",
+        marginTop: "2rem",
+        marginBottom: "2rem",
       }}
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      <Marker position={[38.06204, 27.026746]} icon={ICON}>
+      <Marker position={[38.063472, 27.028338]} icon={ICON}>
         <Popup>
           <h5>Ars Concept Houses</h5>
-          <span>Address: </span>
+          <span>
+            Address: İnönü Mahallesi, Teyfik Yılmaz Caddesi no:70
+            Gümüldür/Menderes
+          </span>
         </Popup>
       </Marker>
     </MapContainer>

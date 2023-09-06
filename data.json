@@ -2,32 +2,28 @@
   {
     "id": "th1",
     "title": "Satsuma",
-    "description": "",
-    "type": "",
+    "description": "description text",
+    "type": "loft",
+    "totalArea": "80",
     "imgUrl": "/images/houses/Satsuma/S_18.jpg",
     "price": 2500
   },
   {
     "id": "th2",
     "title": "Okitsu",
-    "description": "",
-    "type": "",
+    "description": "description text",
+    "type": "loft",
+    "totalArea": "80",
     "imgUrl": "/images/houses/Okitsu/O_19.jpg",
     "price": 2500
   },
+
   {
     "id": "th3",
-    "title": "Murcott",
-    "description": "",
-    "type": "",
-    "imgUrl": " /images/houses/Satsuma/S_18.jpg",
-    "price": 2500
-  },
-  {
-    "id": "th4",
     "title": "Fuerte",
-    "type": "",
-    "description": "",
+    "type": "üçgen",
+    "totalArea": "35",
+    "description": "description text",
     "imgUrl": "/images/houses/Okitsu/O_19.jpg",
     "price": 2500
   }

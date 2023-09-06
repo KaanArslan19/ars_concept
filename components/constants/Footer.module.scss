@@ -1,0 +1,27 @@
+.container {
+  padding: 1rem 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-secondary-logo);
+  color: var(--color-primary-light);
+}
+.columnContainer {
+  p {
+    margin: 0.5rem 0 0.5rem;
+  }
+}
+.columnContainer:first-child {
+  margin-right: 1rem;
+}
+.rowContainer {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-primary-light);
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.8rem;
+}
+.icon {
+  font-size: 24px;
+  margin-right: 0.4rem;
+  color: var(--color-primary-logo);
+}

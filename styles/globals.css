@@ -4,9 +4,10 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  --color-primary: #f25915;
-  --color-primary-light: #f25715c1;
-  --color-secondary: #163c23;
+  --color-primary-logo: #f25915;
+  --color-primary: #e98a01;
+  --color-primary-light: #eadac1;
+  --color-secondary-logo: #163c23;
   --color-white: #fff;
   --color-black: #000;
   --color-gray: #b4b8bf;
@@ -47,9 +48,9 @@ li {
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  color: var(--color-primary-light);
+  color: var(--color-primary);
 }
 
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-  background: var(--color-primary-light) !important;
+  background: var(--color-primary) !important;
 }
