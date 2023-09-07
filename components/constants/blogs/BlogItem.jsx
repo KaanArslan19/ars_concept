@@ -21,7 +21,7 @@ const BlogItem = (props) => {
     }
   }, []);
   return (
-    <Link href={`/blogs/${props.title}`}>
+    <Link href={`/blogs/${props.id}`}>
       <li className={classes.container}>
         <div className={classes.content}>
           <h4>{props.title}</h4>
@@ -52,8 +52,8 @@ const BlogItem = (props) => {
           <Image
             src={props.imgUrl}
             alt={props.title}
-            width={1920}
-            height={1080}
+            fill={true}
+            style={{ objectFit: "contain" }}
           />
         </div>
       </li>
