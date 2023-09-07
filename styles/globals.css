@@ -34,10 +34,13 @@ Link {
 }
 
 a,
-li {
+li,
+button {
   color: inherit;
   text-decoration: none;
   list-style-type: none;
+  background-color: transparent;
+  border: none;
 }
 
 @media (prefers-color-scheme: dark) {

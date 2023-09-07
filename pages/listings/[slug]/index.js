@@ -1,20 +1,24 @@
 import HouseDetails from "@/components/constants/houses/HouseDetails";
-import React from "react";
+import React, { Fragment } from "react";
 import fs from "fs/promises";
+import PhotoGallery from "@/components/ui/PhotoGallery";
+import Footer from "@/components/constants/Footer";
 
 const HouseDetailPage = (props) => {
   return (
-    <div>
+    <Fragment>
       <HouseDetails
         id={props.houseData.id}
         title={props.houseData.title}
         description={props.houseData.description}
         type={props.houseData.type}
         totalArea={props.houseData.totalArea}
-        imgUrl={props.houseData.imgUrl}
+        coverPhoto={props.houseData.coverPhoto}
         price={props.houseData.price}
       />
-    </div>
+      <PhotoGallery photos={props.houseData.photos} />
+      <Footer />
+    </Fragment>
   );
 };
 
@@ -50,8 +54,9 @@ export async function getStaticProps({ params }) {
         description: filteredHouse.description,
         type: filteredHouse.type,
         totalArea: filteredHouse.totalArea,
-        imgUrl: filteredHouse.imgUrl,
+        coverPhoto: filteredHouse.coverPhoto,
         price: filteredHouse.price,
+        photos: filteredHouse.photos,
       },
     },
   };

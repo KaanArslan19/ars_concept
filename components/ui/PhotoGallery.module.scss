@@ -1,0 +1,101 @@
+@import "../../styles/mixins";
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.container {
+  @include flexCenter();
+  flex-direction: column;
+
+  margin: 1rem;
+  button {
+    cursor: pointer;
+    margin: 1rem;
+  }
+  h2 {
+    align-items: flex-start !important;
+  }
+  span {
+    font-size: 0.8rem;
+  }
+}
+
+.imgBox {
+  max-width: 400px;
+  height: auto;
+  margin: 0.8rem;
+
+  img {
+    position: relative !important;
+  }
+}
+.bookingButton {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid var(--color-secondary-logo);
+  background-color: var(--color-secondary-logo);
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+
+.callButton {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.callButton:hover {
+  color: var(--color-secondary-logo);
+}
+
+.overlayContent {
+  height: 100%;
+  @include flexCenter();
+  width: 100%;
+  z-index: 10;
+}
+.overlay {
+  @include flexCenter();
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.229);
+  z-index: 1;
+
+  text-align: center;
+}
+
+.overlay img {
+  max-width: 100%;
+  max-height: 100%;
+  padding: 4rem;
+  position: relative;
+}
+.icon {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 11;
+}

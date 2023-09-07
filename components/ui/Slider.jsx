@@ -29,7 +29,7 @@ const Slider = ({ listings }) => {
           >
             <div
               style={{
-                background: `url(${item.imgUrl}) center, no-repeat`,
+                background: `url(${item.coverPhoto}) center, no-repeat`,
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 cursor: "pointer",

@@ -5,8 +5,13 @@
     "description": "description text",
     "type": "loft",
     "totalArea": "80",
-    "imgUrl": "/images/houses/Satsuma/S_18.jpg",
-    "price": 2500
+    "coverPhoto": "/images/houses/Satsuma/S_18.jpg",
+    "price": 2500,
+    "photos": [
+      "/images/houses/Okitsu/O_19.jpg",
+      "/images/houses/Satsuma/S_18.jpg",
+      "/images/houses/Okitsu/O_19.jpg"
+    ]
   },
   {
     "id": "th2",
@@ -14,8 +19,13 @@
     "description": "description text",
     "type": "loft",
     "totalArea": "80",
-    "imgUrl": "/images/houses/Okitsu/O_19.jpg",
-    "price": 2500
+    "coverPhoto": "/images/houses/Okitsu/O_19.jpg",
+    "price": 2500,
+    "photos": [
+      "/images/houses/Okitsu/O_19.jpg",
+      "/images/houses/Satsuma/S_18.jpg",
+      "/images/houses/Okitsu/O_19.jpg"
+    ]
   },
 
   {
@@ -24,7 +34,12 @@
     "description": "description text",
     "type": "üçgen",
     "totalArea": "35",
-    "imgUrl": "/images/houses/Okitsu/O_19.jpg",
-    "price": 2500
+    "coverPhoto": "/images/houses/Okitsu/O_19.jpg",
+    "price": 2500,
+    "photos": [
+      "/images/houses/Okitsu/O_19.jpg",
+      "/images/houses/Satsuma/S_18.jpg",
+      "/images/houses/Okitsu/O_19.jpg"
+    ]
   }
 ]

@@ -7,14 +7,12 @@ const HouseItem = (props) => {
   return (
     <Link href={`/listings/${props.title}`}>
       <li className={classes.container}>
-        <div className={classes.imgBox}>
-          <Image
-            src={props.imgUrl}
-            alt={props.title}
-            width={1920}
-            height={1080}
-          />
-        </div>
+        <Image
+          src={props.coverPhoto}
+          alt={props.title}
+          width={1920}
+          height={1080}
+        />
 
         <div className={classes.content}>
           <h4>{props.title}</h4>

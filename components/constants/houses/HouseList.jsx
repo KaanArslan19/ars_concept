@@ -18,7 +18,7 @@ const HouseList = ({ listings }) => {
             <HouseItem
               key={item.id}
               id={item.id}
-              imgUrl={item.imgUrl}
+              coverPhoto={item.coverPhoto}
               title={item.title}
               description={item.description}
               price={item.price}
