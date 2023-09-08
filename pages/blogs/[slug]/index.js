@@ -19,7 +19,7 @@ const BlogDetailPage = (props) => {
 export default BlogDetailPage;
 
 export async function getStaticPaths() {
-  const filePath = "./data.json";
+  const filePath = "./blog.json";
   const rawData = await fs.readFile(filePath, "utf8");
   const data = JSON.parse(rawData);
   const paths = data.map((item) => ({

@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import BlogItem from "./BlogItem";
 import classes from "./BlogList.module.scss";
+import { Heading } from "@chakra-ui/react";
 
 const BlogList = ({ blogs }) => {
   console.log(blogs);
@@ -8,11 +9,10 @@ const BlogList = ({ blogs }) => {
     <Fragment>
       <div className={classes.listContainer}>
         <div className={classes.content}>
-          <h2>Header</h2>
+          <Heading as="h3">Mutlaka Görmelisiniz</Heading>
           <span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui non
-            laborum asperiores fugit quas consequuntur labore aperiam
-            perferendis commodi minus, maxime iusto ducimus aliquam cum.
+            Gelin Gümüldür ve yakınındaki görülmeye değer yerleri birlikte
+            tanıyalım.
           </span>
         </div>
         <ul className={classes.list}>

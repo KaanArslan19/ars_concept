@@ -3,6 +3,7 @@ import React, { Fragment } from "react";
 import fs from "fs/promises";
 import PhotoGallery from "@/components/ui/PhotoGallery";
 import Footer from "@/components/constants/Footer";
+import FAQ from "@/components/ui/FAQ";
 
 const HouseDetailPage = (props) => {
   return (
@@ -15,8 +16,10 @@ const HouseDetailPage = (props) => {
         totalArea={props.houseData.totalArea}
         coverPhoto={props.houseData.coverPhoto}
         price={props.houseData.price}
+        airbnbId={props.houseData.airbnbId}
       />
       <PhotoGallery photos={props.houseData.photos} />
+      <FAQ />
       <Footer />
     </Fragment>
   );
@@ -57,6 +60,7 @@ export async function getStaticProps({ params }) {
         coverPhoto: filteredHouse.coverPhoto,
         price: filteredHouse.price,
         photos: filteredHouse.photos,
+        airbnbId: filteredHouse.airbnbId,
       },
     },
   };

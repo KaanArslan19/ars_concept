@@ -15,7 +15,7 @@ const HouseItem = (props) => {
         />
 
         <div className={classes.content}>
-          <h4>{props.title}</h4>
+          <h5>{props.title}</h5>
           <p>{props.description}</p>
           <div className={classes.rowContainer}>
             <BiHome className={classes.icon} />

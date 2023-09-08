@@ -24,7 +24,7 @@ const BlogItem = (props) => {
     <Link href={`/blogs/${props.id}`}>
       <li className={classes.container}>
         <div className={classes.content}>
-          <h4>{props.title}</h4>
+          <h5>{props.title}</h5>
           <p
             id="restricted-paragraph"
             ref={paragraphRef}

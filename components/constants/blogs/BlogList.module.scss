@@ -28,10 +28,10 @@
   align-items: center;
   margin: 2rem 2rem 0;
 
-  h2 {
+  h3 {
     padding-bottom: 0.2rem;
     margin-bottom: 0.8rem;
-    border-bottom: 1px solid var(--color-primary-light);
+    border-bottom: 2px solid var(--color-primary-light);
   }
 }
 .content {
@@ -39,7 +39,6 @@
   flex-direction: column;
 
   span {
-    max-width: 80%;
     margin-bottom: 0.5rem;
   }
 }

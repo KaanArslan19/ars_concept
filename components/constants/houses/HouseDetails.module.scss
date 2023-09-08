@@ -2,6 +2,16 @@
 .container {
   max-width: 100%;
   margin: 2rem 1rem 2rem;
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  h3 {
+    padding-bottom: 0.5rem;
+    font-weight: 500;
+    border-bottom: 2px solid var(--color-primary-light);
+    margin-bottom: 0.5rem;
+  }
 }
 .header {
   @include flexCenter();
@@ -19,14 +29,6 @@
   }
 }
 
-.contentDescription {
-  h3 {
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--color-primary-light);
-    margin-bottom: 0.5rem;
-  }
-}
-
 .icon {
   font-size: 1.5rem;
   color: var(--color-primary-light);
@@ -34,12 +36,6 @@
 }
 .contentOverview {
   margin-top: 2rem;
-
-  h3 {
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--color-primary-light);
-    margin-bottom: 0.5rem;
-  }
 }
 .table {
   display: flex;

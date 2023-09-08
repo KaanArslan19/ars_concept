@@ -11,6 +11,7 @@ const HouseDetails = ({
   totalArea,
   coverPhoto,
   price,
+  airbnbId,
 }) => {
   return (
     <div className={classes.container}>

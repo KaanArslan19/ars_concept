@@ -1,12 +1,13 @@
 import { Fragment } from "react";
 import classes from "./HouseList.module.scss";
 import HouseItem from "./HouseItem";
+import { Heading } from "@chakra-ui/react";
 const HouseList = ({ listings }) => {
   return (
     <Fragment>
       <div className={classes.listContainer}>
         <div className={classes.content}>
-          <h2>Header</h2>
+          <Heading>Evlerimiz</Heading>
           <span>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui non
             laborum asperiores fugit quas consequuntur labore aperiam

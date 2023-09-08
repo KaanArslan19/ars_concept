@@ -2,6 +2,7 @@ import classes from "./Footer.module.scss";
 import { BiLogoInstagram, BiLogoFacebookSquare, BiPhone } from "react-icons/bi";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { HiOutlineMail } from "react-icons/hi";
+import Link from "next/link";
 const Footer = () => {
   return (
     <div className={classes.container}>
@@ -12,9 +13,12 @@ const Footer = () => {
           elit. Possimus ex nulla temporibus modi dolorem asperiores enim
           repudiandae aliquam.
         </p>
-
-        <BiLogoInstagram className={classes.icon} />
-        <BiLogoFacebookSquare className={classes.icon} />
+        <Link href="https://www.instagram.com/arsconcepthouses/">
+          <BiLogoInstagram className={classes.icon} />
+        </Link>
+        <Link href="https://www.instagram.com/arsconcepthouses/">
+          <BiLogoFacebookSquare className={classes.icon} />
+        </Link>
       </div>
       <div className={classes.columnContainer}>
         <h3>İletişim</h3>
@@ -34,10 +38,10 @@ const Footer = () => {
           <BiPhone className={classes.icon} />
           <span>+90 (532) 510 48 28 </span>
         </div>
-        <div className={classes.rowContainer}>
+        <Link href="" className={classes.rowContainer}>
           <HiOutlineMail className={classes.icon} />
           <span>filtur2003@hotmail.com </span>
-        </div>
+        </Link>
       </div>
     </div>
   );
