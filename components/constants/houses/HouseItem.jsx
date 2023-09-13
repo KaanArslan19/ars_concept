@@ -3,7 +3,6 @@ import classes from "./HouseItem.module.scss";
 import Image from "next/image";
 import { BiArea, BiHome, BiMoney } from "react-icons/bi";
 const HouseItem = (props) => {
-  console.log(props);
   return (
     <Link href={`/listings/${props.title}`}>
       <li className={classes.container}>

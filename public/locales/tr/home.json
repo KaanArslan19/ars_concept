@@ -1,0 +1,21 @@
+{
+  "navbar": {
+    "home": "Anasayfa",
+    "about": "Hakkımızda",
+    "gallery": "Galeri",
+    "contact": "İletişim"
+  },
+  "house_list": {
+    "header": "Evlerimiz",
+    "description": "Açıklama yazısı"
+  },
+  "blog_list": {
+    "header": "Mutlaka Görmelisiniz",
+    "description": "Gelin Gümüldür ve yakınındaki görülmeye değer yerleri birlikte tanıyalım."
+  },
+  "footer": {
+    "header": "İletişim",
+    "description_left": "Açıklama yazısı",
+    "description_right": "Açıklama yazısı"
+  }
+}

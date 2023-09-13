@@ -2,18 +2,17 @@ import { Fragment } from "react";
 import BlogItem from "./BlogItem";
 import classes from "./BlogList.module.scss";
 import { Heading } from "@chakra-ui/react";
+import { useTranslation } from "next-i18next";
 
 const BlogList = ({ blogs }) => {
-  console.log(blogs);
+  const { t: translate } = useTranslation("home");
+
   return (
     <Fragment>
       <div className={classes.listContainer}>
         <div className={classes.content}>
-          <Heading as="h3">Mutlaka Görmelisiniz</Heading>
-          <span>
-            Gelin Gümüldür ve yakınındaki görülmeye değer yerleri birlikte
-            tanıyalım.
-          </span>
+          <Heading as="h3">{translate("home:blog_list.header")}</Heading>
+          <span>{translate("home:blog_list.description")}</span>
         </div>
         <ul className={classes.list}>
           {blogs.map((item) => (

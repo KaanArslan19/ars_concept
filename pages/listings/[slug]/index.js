@@ -2,7 +2,6 @@ import HouseDetails from "@/components/constants/houses/HouseDetails";
 import React, { Fragment } from "react";
 import fs from "fs/promises";
 import PhotoGallery from "@/components/ui/PhotoGallery";
-import Footer from "@/components/constants/Footer";
 import FAQ from "@/components/ui/FAQ";
 
 const HouseDetailPage = (props) => {
@@ -20,7 +19,6 @@ const HouseDetailPage = (props) => {
       />
       <PhotoGallery photos={props.houseData.photos} />
       <FAQ />
-      <Footer />
     </Fragment>
   );
 };

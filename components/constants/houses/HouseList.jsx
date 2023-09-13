@@ -2,17 +2,16 @@ import { Fragment } from "react";
 import classes from "./HouseList.module.scss";
 import HouseItem from "./HouseItem";
 import { Heading } from "@chakra-ui/react";
+import { useTranslation } from "next-i18next";
 const HouseList = ({ listings }) => {
+  const { t: translate } = useTranslation("home");
+
   return (
     <Fragment>
       <div className={classes.listContainer}>
         <div className={classes.content}>
-          <Heading>Evlerimiz</Heading>
-          <span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui non
-            laborum asperiores fugit quas consequuntur labore aperiam
-            perferendis commodi minus, maxime iusto ducimus aliquam cum.
-          </span>
+          <Heading>{translate("home:house_list.header")}</Heading>
+          <span>{translate("home:house_list.description")}</span>
         </div>
         <ul className={classes.list}>
           {listings.map((item) => (

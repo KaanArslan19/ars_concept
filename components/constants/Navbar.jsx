@@ -5,15 +5,22 @@ import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
 
 import HamburgerMenu from "../ui/HamburgerMenu";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
-const navbarItems = [
-  { title: "Anasayfa", url: "/" },
-  { title: "Hakkımızda", url: "/about" },
-  { title: "Galeri", url: "/gallery" },
-  { title: "Rezervasyon", url: "reservation" },
-  { title: "İletişim", url: "/contact" },
-];
 const Navbar = () => {
+  const { push } = useRouter();
+  const { t: translate } = useTranslation("home");
+  const navbarItems = [
+    { title: "home", url: "/" },
+    { title: "about", url: "/about" },
+    { title: "gallery", url: "/gallery" },
+    { title: "contact", url: "/contact" },
+  ];
+
+  const handleLangClick = (l) => () => {
+    push("/", undefined, { locale: l });
+  };
   const isMobile = useMediaQuery({
     query: "(max-width: 768px)",
   });
@@ -33,7 +40,9 @@ const Navbar = () => {
           <ul className={classes.listItems}>
             {navbarItems.map((item) => (
               <li key={`link-${item.title}`}>
-                <Link href={`${item.url}`}>{item.title}</Link>
+                <Link href={`${item.url}`}>
+                  {translate(`home:navbar.${item.title}`)}
+                </Link>
               </li>
             ))}
           </ul>
@@ -44,12 +53,14 @@ const Navbar = () => {
               width={24}
               height={24}
               alt="turkey_flag"
+              onClick={handleLangClick("tr")}
             />
             <Image
               src="/images/great_britain_flag.png"
               width={24}
               height={24}
               alt="great_britain_flag"
+              onClick={handleLangClick("en")}
             />
           </div>
         </div>

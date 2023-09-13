@@ -1,5 +1,6 @@
 import About from "@/components/constants/About";
 import Head from "next/head";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function AboutPage() {
   return (
@@ -13,4 +14,14 @@ export default function AboutPage() {
       <About />
     </>
   );
+}
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["home", "blog"], null, [
+        "en",
+        "tr",
+      ])),
+    },
+  };
 }

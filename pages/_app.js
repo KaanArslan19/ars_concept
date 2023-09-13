@@ -1,8 +1,9 @@
 import Layout from "@/components/layouts/Layout";
 import "@/styles/globals.css";
 import { ChakraProvider } from "@chakra-ui/react";
+import { appWithTranslation } from "next-i18next";
 
-export default function App({ Component, pageProps }) {
+const App = ({ Component, pageProps }) => {
   return (
     <ChakraProvider>
       <Layout>
@@ -10,4 +11,6 @@ export default function App({ Component, pageProps }) {
       </Layout>
     </ChakraProvider>
   );
-}
+};
+
+export default appWithTranslation(App);

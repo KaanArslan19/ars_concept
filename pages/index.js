@@ -1,9 +1,8 @@
 import Home from "@/components/layouts/Home";
 import Head from "next/head";
 import fs from "fs/promises";
-
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 export default function HomePage(props) {
-  console.log(props.blogs.blogData);
   return (
     <>
       <Head>
@@ -16,7 +15,7 @@ export default function HomePage(props) {
     </>
   );
 }
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
   const filePath = "./data.json";
   const rawData = await fs.readFile(filePath, "utf8");
   const data = JSON.parse(rawData);
@@ -32,6 +31,10 @@ export async function getStaticProps() {
       blogs: {
         blogData,
       },
+      ...(await serverSideTranslations(locale, ["home", "blog"], null, [
+        "en",
+        "tr",
+      ])),
     },
   };
 }

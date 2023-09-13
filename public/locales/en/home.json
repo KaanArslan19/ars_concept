@@ -1,0 +1,21 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "house_list": {
+    "header": "Our Houses",
+    "description": "Some description text"
+  },
+  "blog_list": {
+    "header": "Worth checking Out",
+    "description": "Let's get to know the worth-seeing places in Gümüldür and its surroundings."
+  },
+  "footer": {
+    "header": "Contact",
+    "description_left": "Some description text",
+    "description_right": "Some description text"
+  }
+}

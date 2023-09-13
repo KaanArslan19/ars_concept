@@ -1,5 +1,6 @@
 import Contact from "@/components/constants/Contact";
 import Head from "next/head";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function AboutPage() {
   return (
@@ -13,4 +14,12 @@ export default function AboutPage() {
       <Contact />
     </>
   );
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["home"], null, ["en", "tr"])),
+    },
+  };
 }

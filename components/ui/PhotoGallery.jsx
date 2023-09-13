@@ -2,8 +2,18 @@ import Image from "next/image";
 import classes from "./PhotoGallery.module.scss";
 import Link from "next/link";
 import { useState } from "react";
-import { AiOutlineClose } from "react-icons/ai";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css/bundle";
+
+import SwiperCore, {
+  Autoplay,
+  EffectFade,
+  Navigation,
+  Pagination,
+} from "swiper";
 const PhotoGallery = ({ photos }) => {
+  console.log(photos[0]);
+  SwiperCore.use([Navigation, Pagination, Autoplay]);
   const [openImage, setOpenImage] = useState(false);
   return (
     <div className={classes.container}>
@@ -11,26 +21,44 @@ const PhotoGallery = ({ photos }) => {
       <div className={classes.list}>
         {photos.map((item) => (
           <>
-            <button onClick={() => setOpenImage(true)}>
+            <button onClick={() => setOpenImage(true)} key={item}>
               <li className={classes.imgBox}>
                 <Image
                   src={item}
                   fill={true}
                   style={{ objectFit: "contain" }}
+                  alt={item}
                 />
               </li>
             </button>
             {openImage && (
               <div className={classes.overlay}>
-                {" "}
                 <div className={classes.overlayContent}>
-                  <Image
-                    src={item}
-                    fill={true}
-                    style={{ objectFit: "contain" }}
-                    alt={item.title}
+                  <Swiper
+                    slidesPerView={1}
+                    navigation
+                    effect="fade"
+                    modules={[EffectFade]}
                     onClick={() => setOpenImage(false)}
-                  />
+                    style={{
+                      width: "100%",
+                      margin: "2rem",
+                    }}
+                  >
+                    {photos.map((item, index) => (
+                      <SwiperSlide key={item.index}>
+                        <div
+                          style={{
+                            background: `url(${item}) center, no-repeat`,
+                            backgroundSize: "cover",
+                            backgroundRepeat: "no-repeat",
+                            cursor: "pointer",
+                          }}
+                          className={classes.swiperContainer}
+                        ></div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
                 </div>
               </div>
             )}

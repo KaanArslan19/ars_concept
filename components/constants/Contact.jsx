@@ -8,7 +8,7 @@ const Contact = ({ airbnbId }) => {
   return (
     <Container
       mt={"2rem"}
-      maxW={{ base: "992", xl: "1280px", "2xl": "1536px" }}
+      maxW={{ base: "992px", xl: "1280px", "2xl": "1536px" }}
     >
       <Heading textAlign="center">Bize Ulaşın</Heading>
       <Flex justify="space-between" direction={{ base: "column", md: "row" }}>

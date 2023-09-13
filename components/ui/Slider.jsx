@@ -13,34 +13,32 @@ const Slider = ({ listings }) => {
   SwiperCore.use([Autoplay, Navigation, Pagination]);
   const router = useRouter();
   return (
-    <>
-      <Swiper
-        slidesPerView={1}
-        navigation
-        pagination={{ type: "progressbar" }}
-        effect="fade"
-        modules={[EffectFade]}
-        autoplay={{ delay: 3000 }}
-      >
-        {listings.map((item) => (
-          <SwiperSlide
-            key={item.id}
-            onClick={() => router.push(`listings/${item.title}`)}
-          >
-            <div
-              style={{
-                background: `url(${item.coverPhoto}) center, no-repeat`,
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                cursor: "pointer",
-              }}
-              className={classes.imgContainer}
-            ></div>
-            <p className={classes.contentInfo}>{item.title}</p>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </>
+    <Swiper
+      slidesPerView={1}
+      navigation
+      pagination={{ type: "progressbar" }}
+      effect="fade"
+      modules={[EffectFade]}
+      autoplay={{ delay: 3000 }}
+    >
+      {listings.map((item) => (
+        <SwiperSlide
+          key={item.id}
+          onClick={() => router.push(`listings/${item.title}`)}
+        >
+          <div
+            style={{
+              background: `url(${item.coverPhoto}) center, no-repeat`,
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              cursor: "pointer",
+            }}
+            className={classes.imgContainer}
+          ></div>
+          <p className={classes.contentInfo}>{item.title}</p>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };
 
