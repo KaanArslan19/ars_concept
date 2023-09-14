@@ -32,7 +32,9 @@ const HouseItem = (props) => {
           <div className={classes.rowContainer}>
             <BiMoney className={classes.icon} />
             {translate("home:house_list.price")}:
-            <span>{props.price} TL / gün</span>
+            <span>
+              {props.price} TL / {translate("home:house_list.day")}
+            </span>
           </div>
         </div>
       </li>

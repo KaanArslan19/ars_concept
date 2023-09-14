@@ -10,7 +10,8 @@
     "description": "Açıklama yazısı",
     "type": "Daire Tipi",
     "totalArea": "Net Alan",
-    "price": "Fiyat"
+    "price": "Fiyat",
+    "day": "Gün"
   },
   "blog_list": {
     "header": "Mutlaka Görmelisiniz",

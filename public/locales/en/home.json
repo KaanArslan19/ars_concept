@@ -10,7 +10,8 @@
     "description": "Some description text",
     "type": "Flat Type",
     "totalArea": "Total Area",
-    "price": "Price"
+    "price": "Price",
+    "day": "Day"
   },
   "blog_list": {
     "header": "Worth checking Out",

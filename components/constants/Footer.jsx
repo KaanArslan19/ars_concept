@@ -13,10 +13,16 @@ const Footer = () => {
       <div className={classes.columnContainer}>
         <h3>Ars Concept Houses</h3>
         <p>{translate("home:footer.description_left")}</p>
-        <Link href="https://www.instagram.com/arsconcepthouses/">
+        <Link
+          href="https://www.instagram.com/arsconcepthouses/"
+          target="_blank"
+        >
           <BiLogoInstagram className={classes.icon} />
         </Link>
-        <Link href="https://www.instagram.com/arsconcepthouses/">
+        <Link
+          href="https://www.instagram.com/arsconcepthouses/"
+          target="_blank"
+        >
           <BiLogoFacebookSquare className={classes.icon} />
         </Link>
       </div>
