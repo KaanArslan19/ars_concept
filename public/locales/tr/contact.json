@@ -1,0 +1,10 @@
+{
+  "header": "Bize Ulaşın",
+  "mobile": "Cep Telefonu",
+  "mail": "Mail Adresi",
+  "direction": {
+    "header": "Yol Tarifi",
+    "description": "Açıklama yol tarifi"
+  },
+  "airbnb": "Rezervasyon"
+}

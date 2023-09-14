@@ -3,6 +3,7 @@ import React, { Fragment } from "react";
 import fs from "fs/promises";
 import PhotoGallery from "@/components/ui/PhotoGallery";
 import FAQ from "@/components/ui/FAQ";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const HouseDetailPage = (props) => {
   return (
@@ -31,7 +32,7 @@ export async function getStaticPaths() {
   const data = JSON.parse(rawData);
   const paths = data.map((item) => ({
     params: {
-      slug: item.title,
+      slug: item.id,
     },
   }));
   return {
@@ -40,12 +41,12 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
-  const houseTitle = params.slug;
+export async function getStaticProps({ params, locale }) {
+  const houseId = params.slug;
   const filePath = "./data.json";
   const rawData = await fs.readFile(filePath, "utf8");
   const data = JSON.parse(rawData);
-  const filteredHouse = data.find((item) => item.title === houseTitle);
+  const filteredHouse = data.find((item) => item.id === houseId);
 
   return {
     props: {
@@ -60,6 +61,10 @@ export async function getStaticProps({ params }) {
         photos: filteredHouse.photos,
         airbnbId: filteredHouse.airbnbId,
       },
+      ...(await serverSideTranslations(locale, ["home", "house"], null, [
+        "en",
+        "tr",
+      ])),
     },
   };
 }

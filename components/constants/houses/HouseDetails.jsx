@@ -3,6 +3,7 @@ import classes from "./HouseDetails.module.scss";
 import { BiCoffee, BiWifi } from "react-icons/bi";
 import { FaBed } from "react-icons/fa";
 import { GiCctvCamera } from "react-icons/gi";
+import { useTranslation } from "next-i18next";
 
 const HouseDetails = ({
   id,
@@ -13,6 +14,8 @@ const HouseDetails = ({
   price,
   airbnbId,
 }) => {
+  const { t: translate } = useTranslation("house");
+
   return (
     <div className={classes.container}>
       <div className={classes.header}>
@@ -27,11 +30,11 @@ const HouseDetails = ({
       </div>
 
       <div className={classes.contentDescription}>
-        <h3>Room Description</h3>
-        <p>{description}</p>
+        <h3>{translate("house:header_description")}</h3>
+        <p>{translate(`house:${id}.description`)}</p>
       </div>
       <div className={classes.contentOverview}>
-        <h3>Room Overview</h3>
+        <h3>{translate("house:header_overview")}</h3>
         <div className={classes.table}>
           <div className={classes.tableColumn}>
             <div className={classes.tableRow}>

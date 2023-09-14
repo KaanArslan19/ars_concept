@@ -3,11 +3,14 @@ import classes from "./BlogDetails.module.scss";
 import Image from "next/image";
 import { CgCalendarDates } from "react-icons/cg";
 import { BiCategory } from "react-icons/bi";
+import { useTranslation } from "next-i18next";
 
 const BlogDetails = ({ id, date, title, description, type, imgUrl }) => {
+  const { t: translate } = useTranslation("blog");
+
   return (
     <Container centerContent mt={"2rem"} maxW={{ base: "768px", xl: "992px" }}>
-      <Heading mb={"1rem"}>{title}</Heading>
+      <Heading mb={"1rem"}>{translate(`blog:${id}.title`)}</Heading>
       <Image
         src={imgUrl}
         fill={true}
@@ -29,7 +32,7 @@ const BlogDetails = ({ id, date, title, description, type, imgUrl }) => {
           leftIcon={<CgCalendarDates />}
           mr="4rem"
         >
-          {date}
+          {translate(`blog:${id}.date`)}
         </Button>
         <Button
           cursor="default"
@@ -38,12 +41,12 @@ const BlogDetails = ({ id, date, title, description, type, imgUrl }) => {
           ml="4rem"
           textTransform="capitalize"
         >
-          {type}
+          {translate(`blog:${id}.type`)}
         </Button>
       </Flex>
 
       <Text mt={"1rem"} mb={"1rem"}>
-        {description}
+        {translate(`blog:${id}.description`)}
       </Text>
     </Container>
   );

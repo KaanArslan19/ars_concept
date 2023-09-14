@@ -50,7 +50,7 @@ const PhotoGallery = ({ photos }) => {
                         <div
                           style={{
                             background: `url(${item}) center, no-repeat`,
-                            backgroundSize: "cover",
+                            backgroundSize: "contain",
                             backgroundRepeat: "no-repeat",
                             cursor: "pointer",
                           }}

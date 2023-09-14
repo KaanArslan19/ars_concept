@@ -19,7 +19,10 @@ export default function AboutPage() {
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["home"], null, ["en", "tr"])),
+      ...(await serverSideTranslations(locale, ["home", "contact"], null, [
+        "en",
+        "tr",
+      ])),
     },
   };
 }

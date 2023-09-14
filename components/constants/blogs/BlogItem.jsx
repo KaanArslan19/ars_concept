@@ -3,7 +3,11 @@ import classes from "./BlogItem.module.scss";
 import Image from "next/image";
 import { IoSparklesOutline } from "react-icons/io5";
 import React, { useState, useEffect, useRef } from "react";
+import { useTranslation } from "next-i18next";
+
 const BlogItem = (props) => {
+  const { t: translate } = useTranslation("blog");
+
   const [isOverflowing, setIsOverflowing] = useState(false);
   const paragraphRef = useRef(null);
   const maxLines = 2;
@@ -24,7 +28,7 @@ const BlogItem = (props) => {
     <Link href={`/blogs/${props.id}`}>
       <li className={classes.container}>
         <div className={classes.content}>
-          <h5>{props.title}</h5>
+          <h5>{translate(`blog:${props.id}.title`)}</h5>
           <p
             id="restricted-paragraph"
             ref={paragraphRef}
@@ -36,13 +40,15 @@ const BlogItem = (props) => {
               WebkitLineClamp: maxLines,
             }}
           >
-            {props.description}
+            {translate(`blog:${props.id}.description`)}
           </p>
           {isOverflowing && <span>{ellipsis}</span>}
           <div className={classes.rowContainer}>
             <div className={classes.innerContent}>
-              <span>{props.date}</span>
-              <span className={classes.innerContentType}>{props.type}</span>
+              <span>{translate(`blog:${props.id}.date`)}</span>
+              <span className={classes.innerContentType}>
+                {translate(`blog:${props.id}.type`)}
+              </span>
             </div>
 
             <IoSparklesOutline className={classes.icon} />

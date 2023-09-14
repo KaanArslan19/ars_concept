@@ -1,13 +1,18 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { useMediaQuery } from "react-responsive";
 import { icon } from "leaflet";
+import Link from "next/link";
+import { Button } from "@chakra-ui/react";
+import { FaDirections } from "react-icons/fa";
+import { useTranslation } from "next-i18next";
 
 const ICON = icon({
   iconUrl: "/images/hotel-marker-icon.png",
   iconSize: [30, 40],
 });
 const Map = () => {
+  const { t: translate } = useTranslation("home");
+
   return (
     <MapContainer
       center={[38.063472, 27.028338]}
@@ -30,6 +35,18 @@ const Map = () => {
           </span>
         </Popup>
       </Marker>
+      <Link href="https://goo.gl/maps/srsMMo7GNB2Qvmjp8" target="_blank">
+        <Button
+          position="absolute"
+          zIndex="20000"
+          right="0"
+          mt="2rem"
+          mr="2rem"
+          leftIcon={<FaDirections />}
+        >
+          {translate("home:map.direction")}
+        </Button>
+      </Link>
     </MapContainer>
   );
 };

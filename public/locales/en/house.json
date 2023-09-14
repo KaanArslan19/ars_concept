@@ -1,0 +1,18 @@
+{
+  "header_description": "Room Description",
+  "header_overview": "Room Overview",
+  "th1": {
+    "description": "description text",
+    "type": "Loft"
+  },
+
+  "th2": {
+    "description": "description text",
+    "type": "Loft"
+  },
+
+  "th3": {
+    "description": "description text",
+    "type": "Triangle"
+  }
+}

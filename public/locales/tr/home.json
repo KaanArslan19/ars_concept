@@ -7,7 +7,10 @@
   },
   "house_list": {
     "header": "Evlerimiz",
-    "description": "Açıklama yazısı"
+    "description": "Açıklama yazısı",
+    "type": "Daire Tipi",
+    "totalArea": "Net Alan",
+    "price": "Fiyat"
   },
   "blog_list": {
     "header": "Mutlaka Görmelisiniz",
@@ -17,5 +20,8 @@
     "header": "İletişim",
     "description_left": "Açıklama yazısı",
     "description_right": "Açıklama yazısı"
+  },
+  "map": {
+    "direction": "Adrese git"
   }
 }

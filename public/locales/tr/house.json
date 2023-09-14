@@ -1,0 +1,18 @@
+{
+  "header_description": "Oda Açıklama",
+  "header_overview": "Oda Genel Bakış",
+  "th1": {
+    "description": "Açıklama Yazısı",
+    "type": "Loft"
+  },
+
+  "th2": {
+    "description": "Açıklama Yazısı",
+    "type": "Loft"
+  },
+
+  "th3": {
+    "description": "Açıklama Yazısı",
+    "type": "Üçgen"
+  }
+}

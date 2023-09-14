@@ -1,0 +1,10 @@
+{
+  "header": "Contact Us",
+  "mobile": "Mobile",
+  "mail": "E-mail",
+  "direction": {
+    "header": "Address Description",
+    "description": "description"
+  },
+  "airbnb": "Reservation"
+}

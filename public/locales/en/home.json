@@ -7,7 +7,10 @@
   },
   "house_list": {
     "header": "Our Houses",
-    "description": "Some description text"
+    "description": "Some description text",
+    "type": "Flat Type",
+    "totalArea": "Total Area",
+    "price": "Price"
   },
   "blog_list": {
     "header": "Worth checking Out",
@@ -17,5 +20,8 @@
     "header": "Contact",
     "description_left": "Some description text",
     "description_right": "Some description text"
+  },
+  "map": {
+    "direction": "Go to the direction"
   }
 }
