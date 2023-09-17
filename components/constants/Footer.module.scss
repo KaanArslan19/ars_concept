@@ -1,3 +1,4 @@
+@import "../../styles/mixins";
 .container {
   padding: 1rem 2rem 0;
   display: flex;
@@ -22,7 +23,25 @@
   margin-bottom: 0.8rem;
 }
 .icon {
+  display: inline-block;
   font-size: 24px;
-  margin-right: 0.4rem;
+  margin-right: 0.8rem;
   color: var(--color-primary-logo);
+}
+
+@include mobile {
+  .columnContainer {
+    p {
+      font-size: 70%;
+    }
+    h3 {
+      font-size: 90%;
+    }
+  }
+  .rowContainer {
+    span {
+      font-size: 70%;
+      max-width: 80%;
+    }
+  }
 }

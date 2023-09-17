@@ -4,11 +4,13 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Poppins", sans-serif;
   --color-primary-logo: #f25915;
   --color-primary: #e98a01;
   --color-primary-light: #eadac1;
   --color-secondary-logo: #163c23;
   --color-white: #fff;
+  --color-cream: #faf1e4;
   --color-black: #000;
   --color-gray: #b4b8bf;
 }
@@ -17,7 +19,6 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-
   min-height: 100vh;
 }
 ul,

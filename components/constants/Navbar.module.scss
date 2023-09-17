@@ -3,8 +3,7 @@
 .container {
   @include flexCenter();
   padding: 2rem;
-  background: var(--color-primary-light);
-  font-family: "Poppins", sans-serif;
+  background: var(--color-cream);
 }
 
 .listItems {

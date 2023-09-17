@@ -56,3 +56,18 @@
     position: relative !important;
   }
 }
+
+@include mobile {
+  .content {
+    max-width: 50%;
+
+    p,
+    span {
+      font-size: 70%;
+    }
+    h5,
+    .icon {
+      font-size: 90%;
+    }
+  }
+}

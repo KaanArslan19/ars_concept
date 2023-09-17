@@ -4,10 +4,16 @@ import Image from "next/image";
 import { IoSparklesOutline } from "react-icons/io5";
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "next-i18next";
+import { useMediaQuery } from "react-responsive";
 
 const BlogItem = (props) => {
   const { t: translate } = useTranslation("blog");
-
+  const isMobile = useMediaQuery({
+    query: "(max-width: 550px)",
+  });
+  const isMidScreen = useMediaQuery({
+    query: "(max-width: 992px)",
+  });
   const [isOverflowing, setIsOverflowing] = useState(false);
   const paragraphRef = useRef(null);
   const maxLines = 2;
@@ -29,20 +35,22 @@ const BlogItem = (props) => {
       <li className={classes.container}>
         <div className={classes.content}>
           <h5>{translate(`blog:${props.id}.title`)}</h5>
-          <p
-            id="restricted-paragraph"
-            ref={paragraphRef}
-            style={{
-              overflow: "hidden",
-              textOverflow: isOverflowing ? "ellipsis" : "clip",
-              display: "-webkit-box",
-              WebkitBoxOrient: "vertical",
-              WebkitLineClamp: maxLines,
-            }}
-          >
-            {translate(`blog:${props.id}.description`)}
-          </p>
-          {isOverflowing && <span>{ellipsis}</span>}
+          {!isMobile && (
+            <p
+              id="restricted-paragraph"
+              ref={paragraphRef}
+              style={{
+                overflow: "hidden",
+                textOverflow: isOverflowing ? "ellipsis" : "clip",
+                display: "-webkit-box",
+                WebkitBoxOrient: "vertical",
+                WebkitLineClamp: maxLines,
+              }}
+            >
+              {translate(`blog:${props.id}.description`)}
+            </p>
+          )}
+
           <div className={classes.rowContainer}>
             <div className={classes.innerContent}>
               <span>{translate(`blog:${props.id}.date`)}</span>
@@ -51,7 +59,7 @@ const BlogItem = (props) => {
               </span>
             </div>
 
-            <IoSparklesOutline className={classes.icon} />
+            {!isMidScreen && <IoSparklesOutline className={classes.icon} />}
           </div>
         </div>
         <div className={classes.imgBox}>
