@@ -5,62 +5,84 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
+  Heading,
 } from "@chakra-ui/react";
-import classes from "./FAQ.module.scss";
+import { useTranslation } from "next-i18next";
 
 const FAQ = () => {
-  return (
-    <Accordion defaultIndex={[0]} allowMultiple mb={"4rem"} mt={"2rem"}>
-      <AccordionItem>
-        <h2>
-          <AccordionButton>
-            <Box
-              as="span"
-              flex="1"
-              textAlign="left"
-              fontSize={{ base: "1rem", md: "1.2rem", "2xl": "1.5rem" }}
-            >
-              Section 1 title
-            </Box>
-            <AccordionIcon
-              fontSize={{ base: "1rem", md: "1.5rem", "2xl": "2rem" }}
-              color="var(--color-secondary-logo)"
-            />
-          </AccordionButton>
-        </h2>
-        <AccordionPanel pb={4}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </AccordionPanel>
-      </AccordionItem>
+  const { t: translate } = useTranslation("home");
 
-      <AccordionItem>
-        <h2>
-          <AccordionButton>
-            <Box
-              as="span"
-              flex="1"
-              textAlign="left"
-              fontSize={{ base: "1rem", md: "1.2rem", "2xl": "1.5rem" }}
-            >
-              Section 2 title
-            </Box>
-            <AccordionIcon
-              fontSize={{ base: "1rem", md: "1.5rem", "2xl": "2rem" }}
-              color="var(--color-secondary-logo)"
-            />
-          </AccordionButton>
-        </h2>
-        <AccordionPanel pb={4}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </AccordionPanel>
-      </AccordionItem>
-    </Accordion>
+  return (
+    <Box my="2rem">
+      <Heading ml="1rem">{translate("home:faq.header")}</Heading>
+      <Accordion defaultIndex={[0]} allowMultiple mb={"4rem"} mt={"2rem"}>
+        <AccordionItem>
+          <h2>
+            <AccordionButton>
+              <Box
+                as="span"
+                flex="1"
+                textAlign="left"
+                fontSize={{ base: "1rem", md: "1.2rem", "2xl": "1.5rem" }}
+              >
+                1. {translate("home:faq.q1.header")}
+              </Box>
+              <AccordionIcon
+                fontSize={{ base: "1rem", md: "1.5rem", "2xl": "2rem" }}
+                color="var(--color-secondary-logo)"
+              />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+            -{translate("home:faq.q1.answer")}
+          </AccordionPanel>
+        </AccordionItem>
+
+        <AccordionItem>
+          <h2>
+            <AccordionButton>
+              <Box
+                as="span"
+                flex="1"
+                textAlign="left"
+                fontSize={{ base: "1rem", md: "1.2rem", "2xl": "1.5rem" }}
+              >
+                2.{translate("home:faq.q2.header")}
+              </Box>
+              <AccordionIcon
+                fontSize={{ base: "1rem", md: "1.5rem", "2xl": "2rem" }}
+                color="var(--color-secondary-logo)"
+              />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+            -{translate("home:faq.q2.answer")}
+          </AccordionPanel>
+        </AccordionItem>
+
+        <AccordionItem>
+          <h2>
+            <AccordionButton>
+              <Box
+                as="span"
+                flex="1"
+                textAlign="left"
+                fontSize={{ base: "1rem", md: "1.2rem", "2xl": "1.5rem" }}
+              >
+                3.{translate("home:faq.q3.header")}
+              </Box>
+              <AccordionIcon
+                fontSize={{ base: "1rem", md: "1.5rem", "2xl": "2rem" }}
+                color="var(--color-secondary-logo)"
+              />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+            -{translate("home:faq.q3.answer")}
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
+    </Box>
   );
 };
 

@@ -24,7 +24,7 @@ const Slider = ({ listings }) => {
       {listings.map((item) => (
         <SwiperSlide
           key={item.id}
-          onClick={() => router.push(`listings/${item.title}`)}
+          onClick={() => router.push(`listings/${item.id}`)}
         >
           <div
             style={{

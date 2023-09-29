@@ -41,7 +41,7 @@ const Contact = ({ airbnbId }) => {
               >
                 {translate("contact:mail")}
               </Text>
-              <Text mb="1rem">filtur2003@hotmail.com</Text>
+              <Text mb="1rem">arsconcepthouses@gmail.com</Text>
             </Box>
           </Box>
 

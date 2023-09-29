@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
         <Link href="" className={classes.rowContainer}>
           <HiOutlineMail className={classes.icon} />
-          <span>filtur2003@hotmail.com </span>
+          <span>arsconcepthouses@gmail.com</span>
         </Link>
       </div>
     </div>

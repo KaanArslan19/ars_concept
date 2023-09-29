@@ -5,13 +5,13 @@
     "description": "description text",
     "type": "loft",
     "totalArea": "80",
-    "coverPhoto": "/images/houses/Satsuma/S_18.jpg",
+    "coverPhoto": "/images/houses/Satsuma/S_5.jpg",
     "price": 2500,
     "airbnbId": "871784616119709972",
     "photos": [
-      "/images/houses/Okitsu/O_19.jpg",
-      "/images/houses/Satsuma/S_18.jpg",
-      "/images/houses/Okitsu/O_19.jpg"
+      "/images/houses/Okitsu/O_5.jpg",
+      "/images/houses/Satsuma/S_5.jpg",
+      "/images/houses/Okitsu/O_5.jpg"
     ]
   },
   {
@@ -20,13 +20,13 @@
     "description": "description text",
     "type": "loft",
     "totalArea": "80",
-    "coverPhoto": "/images/houses/Okitsu/O_19.jpg",
+    "coverPhoto": "/images/houses/Okitsu/O_5.jpg",
     "price": 2500,
     "airbnbId": "871784616119709972",
     "photos": [
-      "/images/houses/Okitsu/O_19.jpg",
-      "/images/houses/Satsuma/S_18.jpg",
-      "/images/houses/Okitsu/O_19.jpg"
+      "/images/houses/Okitsu/O_5.jpg",
+      "/images/houses/Satsuma/S_5.jpg",
+      "/images/houses/Okitsu/O_5.jpg"
     ]
   },
 
@@ -36,13 +36,13 @@
     "description": "description text",
     "type": "üçgen",
     "totalArea": "35",
-    "coverPhoto": "/images/houses/Okitsu/O_19.jpg",
+    "coverPhoto": "/images/houses/Okitsu/O_5.jpg",
     "price": 2500,
     "airbnbId": "871784616119709972",
     "photos": [
-      "/images/houses/Okitsu/O_19.jpg",
-      "/images/houses/Satsuma/S_18.jpg",
-      "/images/houses/Okitsu/O_19.jpg"
+      "/images/houses/Okitsu/O_5.jpg",
+      "/images/houses/Satsuma/S_5.jpg",
+      "/images/houses/Okitsu/O_5.jpg"
     ]
   }
 ]

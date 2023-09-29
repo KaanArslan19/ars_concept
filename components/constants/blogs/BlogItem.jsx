@@ -12,7 +12,7 @@ const BlogItem = (props) => {
     query: "(max-width: 550px)",
   });
   const isMidScreen = useMediaQuery({
-    query: "(max-width: 992px)",
+    query: "(max-width: 1200px)",
   });
   const [isOverflowing, setIsOverflowing] = useState(false);
   const paragraphRef = useRef(null);

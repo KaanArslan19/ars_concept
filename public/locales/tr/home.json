@@ -7,7 +7,7 @@
   },
   "house_list": {
     "header": "Evlerimiz",
-    "description": "Açıklama yazısı",
+    "description": "Gümüldür'ün dünyaca ünlü mandalina bahçeleri içinde, denize 5 dk uzaklıkta konumlandırılmış, 12 ay ev rahatlığında hizmet veren bir tesis.",
     "type": "Daire Tipi",
     "totalArea": "Net Alan",
     "price": "Fiyat",
@@ -24,5 +24,20 @@
   },
   "map": {
     "direction": "Adrese git"
+  },
+  "faq": {
+    "header": "Sık Sorulanlar",
+    "q1": {
+      "header": "Tesisim denize ve Merkeze uzaklığı ne kadar ?",
+      "answer": "Tesisimiz denize arabayla 5 dakika yürüyerek 15 dakika uzaklıkta olup merkeze ise arabayla 2 dakika yürüyerek 7 dakika uzaklıktadır."
+    },
+    "q2": {
+      "header": "Günlük kiralamalarda yanımızda getirmemiz gereken eşyalar neler ?",
+      "answer": "Şampuan ve diş macunu gibi kişisel temizlik malzemeleri getirmeniz günlük kiralamalar için yeterli."
+    },
+    "q3": {
+      "header": "Yakınlarda alışveriş yapabileceğimiz marketler var mı ?",
+      "answer": "Merkezde Migros Jet, BIM, ŞOK, SEÇ, A101, Salı Pazarı gibi birçok market, kasap, balıkçı ve mandıra mevcut."
+    }
   }
 }
