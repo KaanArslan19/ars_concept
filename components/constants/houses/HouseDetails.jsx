@@ -2,7 +2,7 @@ import Image from "next/image";
 import classes from "./HouseDetails.module.scss";
 import { BiCoffee, BiWifi } from "react-icons/bi";
 import { FaBed } from "react-icons/fa";
-import { GiCctvCamera, GiTangerine } from "react-icons/gi";
+import { GiCctvCamera } from "react-icons/gi";
 import { useTranslation } from "next-i18next";
 
 const HouseDetails = ({ id, title, coverPhoto }) => {
@@ -11,9 +11,7 @@ const HouseDetails = ({ id, title, coverPhoto }) => {
   return (
     <div className={classes.container}>
       <div className={classes.header}>
-        <div className={classes.containerHeader}>
-          <h1>{title}</h1>
-        </div>
+        <h1>{title}</h1>
 
         <div className={classes.imgBox}>
           <Image
@@ -25,7 +23,7 @@ const HouseDetails = ({ id, title, coverPhoto }) => {
         </div>
       </div>
 
-      <div className={classes.contentDescription}>
+      <div>
         <h3>{translate("house:header_description")}</h3>
         <p>{translate(`house:${id}.description`)}</p>
       </div>

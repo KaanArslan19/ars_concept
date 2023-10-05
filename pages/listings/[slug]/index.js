@@ -4,6 +4,7 @@ import fs from "fs/promises";
 import PhotoGallery from "@/components/ui/PhotoGallery";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import Head from "next/head";
 
 const HouseDetailPage = (props) => {
   const { t: translate } = useTranslation("meta");
@@ -58,10 +59,12 @@ export async function getStaticProps({ params, locale }) {
         coverPhoto: filteredHouse.coverPhoto,
         photos: filteredHouse.photos,
       },
-      ...(await serverSideTranslations(locale, ["home", "house"], null, [
-        "en",
-        "tr",
-      ])),
+      ...(await serverSideTranslations(
+        locale,
+        ["home", "house", "meta"],
+        null,
+        ["en", "tr"]
+      )),
     },
   };
 }

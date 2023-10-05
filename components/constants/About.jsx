@@ -12,14 +12,12 @@ const About = () => {
     <Container centerContent mt={"2rem"} maxW={{ base: "768px", xl: "992px" }}>
       <Heading mb={"1rem"}>{translate("about:header")}</Heading>
 
-      <Text mt={"1rem"} mb={"2rem"}>
-        {aboutText.map((item) => (
-          <p>
-            {item} <br />
-            <br />
-          </p>
-        ))}
-      </Text>
+      {aboutText.map((item) => (
+        <Text mt={"1rem"} mb={"2rem"}>
+          {item} <br />
+          <br />
+        </Text>
+      ))}
     </Container>
   );
 };
