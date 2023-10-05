@@ -5,12 +5,16 @@
     "gallery": "Galeri",
     "contact": "İletişim"
   },
+  "slider": {
+    "slogan": "Gümüldürdeki Eviniz"
+  },
   "house_list": {
     "header": "Evlerimiz",
     "description": "Gümüldür'ün dünyaca ünlü mandalina bahçeleri içinde, denize 5 dk uzaklıkta konumlandırılmış, 12 ay ev rahatlığında hizmet veren bir tesis.",
     "type": "Daire Tipi",
     "totalArea": "Net Alan",
     "price": "Fiyat",
+    "priceDescription": "İletişime geçiniz",
     "day": "Gün"
   },
   "blog_list": {

@@ -31,6 +31,8 @@ button,
 li,
 a,
 input,
+svg,
+path,
 Link {
   margin: 0;
   padding: 0;
@@ -38,7 +40,8 @@ Link {
 
 a,
 li,
-button {
+button,
+svg {
   color: inherit;
   text-decoration: none;
   list-style-type: none;

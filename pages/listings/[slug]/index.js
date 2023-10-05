@@ -22,6 +22,7 @@ const HouseDetailPage = (props) => {
         title={props.houseData.title}
         coverPhoto={props.houseData.coverPhoto}
       />
+
       <PhotoGallery photos={props.houseData.photos} />
     </Fragment>
   );

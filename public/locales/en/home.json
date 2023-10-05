@@ -5,12 +5,16 @@
     "gallery": "Gallery",
     "contact": "Contact"
   },
+  "slider": {
+    "slogan": "Your home in Gumuldur"
+  },
   "house_list": {
     "header": "Our Houses",
     "description": "Located in the world-famous mandarin gardens of Gümüldür, 5 minutes from the sea, it is a facility that serves 12 months in the comfort of home.",
     "type": "Flat Type",
     "totalArea": "Total Area",
     "price": "Price",
+    "priceDescription": "Contact us",
     "day": "Day"
   },
   "blog_list": {

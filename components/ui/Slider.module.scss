@@ -1,8 +1,14 @@
+@import "../../styles/mixins";
 .imgContainer {
   width: 100%;
   position: relative !important;
-  height: 450px;
+  height: 600px;
   overflow: hidden;
+}
+@include mobile {
+  .imgContainer {
+    height: 450px;
+  }
 }
 
 .contentInfo {
@@ -13,7 +19,23 @@
   padding: 0.5rem 1rem 0.5rem;
   border: 1px solid var(--color-primary);
   border-radius: 5px;
+  color: var(--color-cream);
+
   background-color: var(--color-primary);
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
+}
+.slogan {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 2rem 2rem 2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  transform: rotate(-2deg);
+  border: 1px solid var(--color-cream);
+  background-color: var(--color-cream);
+  padding: 0.2rem 0.5rem 0.2rem;
+  border-radius: 10px;
+  text-transform: capitalize;
 }

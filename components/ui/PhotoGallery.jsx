@@ -18,56 +18,59 @@ const PhotoGallery = ({ photos }) => {
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
-
   return (
     <div className={classes.container}>
-      <h2> Photo Gallery</h2>
-      <div className={classes.list}>
-        {photos.map((item, index) => (
-          <div key={item + index}>
-            <button onClick={() => setOpenImage(true)}>
-              <li className={classes.imgBox}>
-                <Image
-                  src={item}
-                  fill={true}
-                  sizes="auto"
-                  style={{ objectFit: "contain" }}
-                  alt={item}
-                />
-              </li>
-            </button>
-            {openImage && (
-              <div className={classes.overlay}>
-                <div className={classes.overlayContent}>
-                  <div className={classes.sliderContainer}>
-                    <div onClick={goToPrevious} className={classes.arrow}>
-                      <BiChevronLeft />
-                    </div>
-                    <div className={classes.imageContainer}>
-                      <Image
-                        src={photos[currentIndex]}
-                        fill={true}
-                        style={{ objectFit: "contain" }}
-                        alt={photos[currentIndex]}
-                      />
-                      <div
-                        onClick={() => setOpenImage(false)}
-                        className={classes.closeBtn}
-                      >
-                        <AiOutlineClose />
+      {photos.length !== 0 && (
+        <>
+          <h2> Photo Gallery</h2>
+          <div className={classes.list}>
+            {photos.map((item, index) => (
+              <div key={item + index}>
+                <button onClick={() => setOpenImage(true)}>
+                  <li className={classes.imgBox}>
+                    <Image
+                      src={item}
+                      fill={true}
+                      sizes="auto"
+                      style={{ objectFit: "contain" }}
+                      alt={item}
+                    />
+                  </li>
+                </button>
+                {openImage && (
+                  <div className={classes.overlay}>
+                    <div className={classes.overlayContent}>
+                      <div className={classes.sliderContainer}>
+                        <div onClick={goToPrevious} className={classes.arrow}>
+                          <BiChevronLeft />
+                        </div>
+                        <div className={classes.imageContainer}>
+                          <Image
+                            src={photos[currentIndex]}
+                            fill={true}
+                            style={{ objectFit: "contain" }}
+                            alt={photos[currentIndex]}
+                          />
+                          <div
+                            onClick={() => setOpenImage(false)}
+                            className={classes.closeBtn}
+                          >
+                            <AiOutlineClose />
+                          </div>
+                        </div>
+
+                        <div onClick={goToNext} className={classes.arrow}>
+                          <BiChevronRight />
+                        </div>
                       </div>
                     </div>
-
-                    <div onClick={goToNext} className={classes.arrow}>
-                      <BiChevronRight />
-                    </div>
                   </div>
-                </div>
+                )}
               </div>
-            )}
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
       <div>
         <Link href="/contact">
           <button className={classes.bookingButton}>Book Now</button>

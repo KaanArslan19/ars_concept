@@ -42,9 +42,9 @@ const Gallery = () => {
                 <Image
                   src="/images/ars_concept_logo.png"
                   fill="true"
+                  style={{ objectFit: "contain" }}
                   alt="logo"
                   className={classes.img}
-                  style={{ objectFit: "contain" }}
                 />
               </Box>
               <Box h="200px" border="1px solid">

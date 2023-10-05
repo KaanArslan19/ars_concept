@@ -9,9 +9,13 @@ import SwiperCore, {
 } from "swiper";
 import "swiper/css/bundle";
 import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
+
 const Slider = ({ listings }) => {
   SwiperCore.use([Autoplay, Navigation, Pagination]);
   const router = useRouter();
+  const { t: translate } = useTranslation("home");
+
   return (
     <Swiper
       slidesPerView={1}
@@ -35,7 +39,11 @@ const Slider = ({ listings }) => {
             }}
             className={classes.imgContainer}
           ></div>
-          <p className={classes.contentInfo}>{item.title}</p>
+          <span className={classes.contentInfo}>{item.title}</span>
+          <span className={classes.slogan}>
+            {" "}
+            {translate("home:slider.slogan")}
+          </span>
         </SwiperSlide>
       ))}
     </Swiper>
