@@ -4,14 +4,13 @@
   display: flex;
   color: var(--black-dark);
   margin: 0.5rem;
-
   overflow: hidden;
 }
 
 .content {
   margin: 1rem;
   padding-right: 2rem;
-  max-width: 60%;
+  max-width: 50%;
   h5 {
     margin-bottom: 0.5rem;
     color: var(--color-primary-logo);
@@ -59,15 +58,15 @@
 
 @include mobile {
   .content {
-    max-width: 50%;
+    max-width: 40%;
     margin-right: 2rem;
     p,
     span {
-      font-size: 70%;
+      font-size: 80%;
     }
     h5,
     .icon {
-      font-size: 70%;
+      font-size: 80%;
     }
   }
   .imgBox {

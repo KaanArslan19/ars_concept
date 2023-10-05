@@ -30,7 +30,7 @@ const Contact = ({ airbnbId }) => {
               >
                 {translate("contact:mobile")}
               </Text>
-              <Text mb="0.5rem">+90 (531) 285 57 48</Text>
+              <Text mb="0.5rem">+90 (532) 510 48 28</Text>
             </Box>
             <Box>
               <Text
@@ -56,10 +56,6 @@ const Contact = ({ airbnbId }) => {
         </Flex>
         <Map />
       </Flex>
-      <Box my="2rem">
-        <Heading as="h4">{translate("contact:direction.header")}</Heading>
-        <Text>{translate("contact:direction.description")}</Text>
-      </Box>
     </Container>
   );
 };

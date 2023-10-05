@@ -2,43 +2,48 @@
   {
     "id": "th1",
     "title": "Satsuma",
-    "description": "description text",
-    "type": "loft",
-    "totalArea": "80",
     "coverPhoto": "/images/houses/Satsuma/S_5.jpg",
-    "price": 2500,
-    "airbnbId": "871784616119709972",
     "photos": [
-      "/images/houses/Okitsu/O_5.jpg",
+      "/images/houses/Satsuma/S_1.jpg",
+      "/images/houses/Satsuma/S_2.jpg",
       "/images/houses/Satsuma/S_5.jpg",
-      "/images/houses/Okitsu/O_5.jpg"
+      "/images/houses/Satsuma/S_6.jpg",
+      "/images/houses/Satsuma/S_7.jpg",
+      "/images/houses/Satsuma/S_9.jpg",
+      "/images/houses/Satsuma/S_11.jpg",
+      "/images/houses/Satsuma/S_12.jpg",
+      "/images/houses/Satsuma/S_13.jpg",
+      "/images/houses/Satsuma/S_14.jpg",
+      "/images/houses/Satsuma/S_15.jpg",
+      "/images/houses/Satsuma/S_16.jpg",
+      "/images/houses/Satsuma/S_17.jpg",
+      "/images/houses/Satsuma/S_18.jpg"
     ]
   },
   {
     "id": "th2",
     "title": "Okitsu",
-    "description": "description text",
-    "type": "loft",
-    "totalArea": "80",
     "coverPhoto": "/images/houses/Okitsu/O_5.jpg",
-    "price": 2500,
-    "airbnbId": "871784616119709972",
     "photos": [
       "/images/houses/Okitsu/O_5.jpg",
-      "/images/houses/Satsuma/S_5.jpg",
-      "/images/houses/Okitsu/O_5.jpg"
+      "/images/houses/Okitsu/O_6.jpg",
+      "/images/houses/Okitsu/O_7.jpg",
+      "/images/houses/Okitsu/O_9.jpg",
+      "/images/houses/Okitsu/O_11.jpg",
+      "/images/houses/Okitsu/O_12.jpg",
+      "/images/houses/Okitsu/O_13.jpg",
+      "/images/houses/Okitsu/O_14.jpg",
+      "/images/houses/Okitsu/O_15.jpg",
+      "/images/houses/Okitsu/O_16.jpg",
+      "/images/houses/Okitsu/O_17.jpg",
+      "/images/houses/Okitsu/O_19.jpg"
     ]
   },
 
   {
     "id": "th3",
     "title": "Fuerte",
-    "description": "description text",
-    "type": "üçgen",
-    "totalArea": "35",
     "coverPhoto": "/images/houses/Okitsu/O_5.jpg",
-    "price": 2500,
-    "airbnbId": "871784616119709972",
     "photos": [
       "/images/houses/Okitsu/O_5.jpg",
       "/images/houses/Satsuma/S_5.jpg",

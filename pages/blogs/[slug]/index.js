@@ -1,16 +1,26 @@
 import BlogDetails from "@/components/constants/blogs/BlogDetails";
 import fs from "fs/promises";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
+import Head from "next/head";
 
 const BlogDetailPage = (props) => {
+  const { t: translate } = useTranslation("meta");
+
   return (
     <div>
+      <Head>
+        <title>{translate("meta:blogDetails.title")}</title>
+        <meta
+          name="description"
+          content={translate("meta:blogDetails.content")}
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon_ars.ico" />
+      </Head>
       <BlogDetails
         id={props.houseData.id}
-        date={props.houseData.date}
         title={props.houseData.title}
-        description={props.houseData.description}
-        type={props.houseData.type}
         imgUrl={props.houseData.imgUrl}
       />
     </div>
@@ -45,13 +55,10 @@ export async function getStaticProps({ params, locale }) {
     props: {
       houseData: {
         id: filteredBlog.id,
-        date: filteredBlog.date,
         title: filteredBlog.title,
-        description: filteredBlog.description,
-        type: filteredBlog.type,
         imgUrl: filteredBlog.imgUrl,
       },
-      ...(await serverSideTranslations(locale, ["home", "blog"], null, [
+      ...(await serverSideTranslations(locale, ["home", "blog", "meta"], null, [
         "en",
         "tr",
       ])),

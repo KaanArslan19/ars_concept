@@ -5,9 +5,14 @@ import { CgCalendarDates } from "react-icons/cg";
 import { BiCategory } from "react-icons/bi";
 import { useTranslation } from "next-i18next";
 
-const BlogDetails = ({ id, date, title, description, type, imgUrl }) => {
+const BlogDetails = ({ id, title, imgUrl }) => {
   const { t: translate } = useTranslation("blog");
 
+  function splitStringAtNewlines(inputString) {
+    const parts = inputString.split("\n");
+    return parts;
+  }
+  const descText = splitStringAtNewlines(translate(`blog:${id}.description`));
   return (
     <Container centerContent mt={"2rem"} maxW={{ base: "768px", xl: "992px" }}>
       <Heading mb={"1rem"}>{translate(`blog:${id}.title`)}</Heading>
@@ -18,7 +23,6 @@ const BlogDetails = ({ id, date, title, description, type, imgUrl }) => {
         className={classes.img}
         alt={title}
       />
-
       <Flex
         w="100%"
         justify="space-around"
@@ -45,9 +49,12 @@ const BlogDetails = ({ id, date, title, description, type, imgUrl }) => {
         </Button>
       </Flex>
 
-      <Text mt={"1rem"} mb={"1rem"}>
-        {translate(`blog:${id}.description`)}
-      </Text>
+      {descText.map((item) => (
+        <Text mt={"1rem"} mb={"1rem"} id="desc-text">
+          {item} <br />
+          <br />
+        </Text>
+      ))}
     </Container>
   );
 };

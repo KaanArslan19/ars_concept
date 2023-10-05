@@ -2,17 +2,23 @@
   "header_description": "Oda Açıklama",
   "header_overview": "Oda Genel Bakış",
   "th1": {
-    "description": "Açıklama Yazısı",
-    "type": "Loft"
+    "type": "Loft",
+    "description": "",
+    "totalArea": "80",
+    "price": "1750"
   },
 
   "th2": {
-    "description": "Açıklama Yazısı",
-    "type": "Loft"
+    "type": "Loft",
+    "description": "",
+    "totalArea": "80",
+    "price": "1750"
   },
 
   "th3": {
-    "description": "Açıklama Yazısı",
-    "type": "Üçgen"
+    "type": "Üçgen",
+    "description": "",
+    "totalArea": "40",
+    "price": "1750"
   }
 }

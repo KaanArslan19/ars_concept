@@ -12,12 +12,11 @@ const BlogItem = (props) => {
     query: "(max-width: 550px)",
   });
   const isMidScreen = useMediaQuery({
-    query: "(max-width: 1200px)",
+    query: "(max-width: 1400px)",
   });
   const [isOverflowing, setIsOverflowing] = useState(false);
   const paragraphRef = useRef(null);
   const maxLines = 2;
-  const ellipsis = "...";
 
   useEffect(() => {
     const paragraphElement = paragraphRef.current;

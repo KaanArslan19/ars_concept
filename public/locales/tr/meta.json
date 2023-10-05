@@ -1,0 +1,23 @@
+{
+  "about": {
+    "title": "Hakkımızda",
+    "content": "Mandalina bahçesi içinde bulunan ve tiny house konseptinde olan Ars Concept Houses hakkında bilgi edinin."
+  },
+  "blogDetails": {
+    "title": "Blogs",
+    "content": "Gümüldür ve çevresi hakkında tarihi, kültürel ve eğlence üzerine bloglar okumak istiyorsanız doğru yerdesiniz."
+  },
+  "contact": {
+    "title": "Bize Ulaşın",
+    "content": "Ars Concept Houses iletişim numarası, rezervasyon bilgileri ve mail adresine buradan ulaşabilirsiniz."
+  },
+  "gallery": {
+    "title": "Photo Gallery",
+    "content": "Ars Concept Houses dış çevre, odalar ve ortak alan fotoğraflarını görebilirsiniz."
+  },
+  "listings": {
+    "title": "Tiny Evlerimiz",
+    "content": "Ars Concept Houses tiny, bungalov ve üçgen evleri hakkındaki detaylı bilgilere buradan ulaşabilirsiniz"
+  },
+  "home": { "title": "Ars Concept Houses", "content": "Ars Concept Houses" }
+}

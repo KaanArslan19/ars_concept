@@ -2,24 +2,26 @@ import HouseDetails from "@/components/constants/houses/HouseDetails";
 import React, { Fragment } from "react";
 import fs from "fs/promises";
 import PhotoGallery from "@/components/ui/PhotoGallery";
-import FAQ from "@/components/ui/FAQ";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 const HouseDetailPage = (props) => {
+  const { t: translate } = useTranslation("meta");
+
   return (
     <Fragment>
+      <Head>
+        <title>{translate("meta:listings.title")}</title>
+        <meta name="description" content={translate("meta:listings.content")} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon_ars.ico" />
+      </Head>
       <HouseDetails
         id={props.houseData.id}
         title={props.houseData.title}
-        description={props.houseData.description}
-        type={props.houseData.type}
-        totalArea={props.houseData.totalArea}
         coverPhoto={props.houseData.coverPhoto}
-        price={props.houseData.price}
-        airbnbId={props.houseData.airbnbId}
       />
       <PhotoGallery photos={props.houseData.photos} />
-      <FAQ />
     </Fragment>
   );
 };
@@ -53,13 +55,8 @@ export async function getStaticProps({ params, locale }) {
       houseData: {
         id: filteredHouse.id,
         title: filteredHouse.title,
-        description: filteredHouse.description,
-        type: filteredHouse.type,
-        totalArea: filteredHouse.totalArea,
         coverPhoto: filteredHouse.coverPhoto,
-        price: filteredHouse.price,
         photos: filteredHouse.photos,
-        airbnbId: filteredHouse.airbnbId,
       },
       ...(await serverSideTranslations(locale, ["home", "house"], null, [
         "en",

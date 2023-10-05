@@ -2,29 +2,25 @@ import Image from "next/image";
 import classes from "./HouseDetails.module.scss";
 import { BiCoffee, BiWifi } from "react-icons/bi";
 import { FaBed } from "react-icons/fa";
-import { GiCctvCamera } from "react-icons/gi";
+import { GiCctvCamera, GiTangerine } from "react-icons/gi";
 import { useTranslation } from "next-i18next";
 
-const HouseDetails = ({
-  id,
-  title,
-  description,
-  totalArea,
-  coverPhoto,
-  price,
-  airbnbId,
-}) => {
+const HouseDetails = ({ id, title, coverPhoto }) => {
   const { t: translate } = useTranslation("house");
 
   return (
     <div className={classes.container}>
       <div className={classes.header}>
-        <h1>{title}</h1>
+        <div className={classes.containerHeader}>
+          <h1>{title}</h1>
+        </div>
+
         <div className={classes.imgBox}>
           <Image
             src={coverPhoto}
             fill={true}
             style={{ objectFit: "contain" }}
+            alt={`coverPhoto-${title}`}
           />
         </div>
       </div>

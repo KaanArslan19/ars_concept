@@ -1,0 +1,23 @@
+{
+  "about": {
+    "title": "About Us",
+    "content": "Learn about Ars Concept Houses, a tiny house in a tangerine garden"
+  },
+  "blogDetails": {
+    "title": "Blogs",
+    "content": "If you want to read historical, cultural and entertainment blogs about Gümüldür and its surroundings, you are in the right place."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "content": "You can find Ars Concept Houses contact number, reservation information and email address here."
+  },
+  "gallery": {
+    "title": "Photo Gallery",
+    "content": "You can see photos of the exterior, rooms and common areas of Ars Concept Houses."
+  },
+  "listings": {
+    "title": "Our Tiny Houses",
+    "content": "You can find detailed information about Ars Concept Houses tiny, bungalow and triangular houses here."
+  },
+  "home": { "title": "Ars Concept Houses", "content": "Ars Concept Houses" }
+}

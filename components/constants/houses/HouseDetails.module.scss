@@ -7,6 +7,7 @@
     font-weight: 600;
   }
   h3 {
+    font-size: 20px;
     padding-bottom: 0.5rem;
     font-weight: 500;
     border-bottom: 2px solid var(--color-primary-light);
@@ -16,6 +17,9 @@
 .header {
   @include flexCenter();
   flex-direction: column;
+  h1 {
+    font-size: 40px;
+  }
 }
 .imgBox {
   display: flex;
@@ -26,6 +30,8 @@
 
   img {
     position: relative !important;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
   }
 }
 
@@ -49,4 +55,9 @@
   margin-bottom: 1rem;
   display: flex;
   align-items: flex-end;
+}
+
+.containerHeader {
+  display: flex;
+  align-items: center;
 }

@@ -2,17 +2,23 @@
   "header_description": "Room Description",
   "header_overview": "Room Overview",
   "th1": {
-    "description": "description text",
-    "type": "Loft"
+    "type": "Loft",
+    "description": "",
+    "totalArea": "80",
+    "price": "1750"
   },
 
   "th2": {
-    "description": "description text",
-    "type": "Loft"
+    "type": "Loft",
+    "description": "",
+    "totalArea": "80",
+    "price": "1750"
   },
 
   "th3": {
-    "description": "description text",
-    "type": "Triangle"
+    "type": "Triangle",
+    "description": "",
+    "totalArea": "40",
+    "price": "1750"
   }
 }

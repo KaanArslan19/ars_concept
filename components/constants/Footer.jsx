@@ -12,7 +12,6 @@ const Footer = () => {
     <div className={classes.container}>
       <div className={classes.columnContainer}>
         <h3>Ars Concept Houses</h3>
-        <p>{translate("home:footer.description_left")}</p>
         <Link
           href="https://www.instagram.com/arsconcepthouses/"
           target="_blank"
@@ -28,7 +27,6 @@ const Footer = () => {
       </div>
       <div className={classes.columnContainer}>
         <h3>{translate("home:footer.header")}</h3>
-        <p>{translate("home:footer.description_right")}</p>
         <div className={classes.rowContainer}>
           <MdOutlineLocationOn className={classes.icon} />
           <span>

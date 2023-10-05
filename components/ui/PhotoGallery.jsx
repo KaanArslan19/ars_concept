@@ -2,30 +2,35 @@ import Image from "next/image";
 import classes from "./PhotoGallery.module.scss";
 import Link from "next/link";
 import { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css/bundle";
 
-import SwiperCore, {
-  Autoplay,
-  EffectFade,
-  Navigation,
-  Pagination,
-} from "swiper";
+import { BiChevronLeft, BiChevronRight, BiWindowClose } from "react-icons/bi";
+import { AiOutlineClose } from "react-icons/ai";
 const PhotoGallery = ({ photos }) => {
-  console.log(photos[0]);
-  SwiperCore.use([Navigation, Pagination, Autoplay]);
   const [openImage, setOpenImage] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const goToPrevious = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? photos.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+  const goToNext = () => {
+    const isLastSlide = currentIndex === photos.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
   return (
     <div className={classes.container}>
       <h2> Photo Gallery</h2>
       <div className={classes.list}>
-        {photos.map((item) => (
-          <>
-            <button onClick={() => setOpenImage(true)} key={item}>
+        {photos.map((item, index) => (
+          <div key={item + index}>
+            <button onClick={() => setOpenImage(true)}>
               <li className={classes.imgBox}>
                 <Image
                   src={item}
                   fill={true}
+                  sizes="auto"
                   style={{ objectFit: "contain" }}
                   alt={item}
                 />
@@ -34,39 +39,37 @@ const PhotoGallery = ({ photos }) => {
             {openImage && (
               <div className={classes.overlay}>
                 <div className={classes.overlayContent}>
-                  <Swiper
-                    slidesPerView={1}
-                    navigation
-                    effect="fade"
-                    modules={[EffectFade]}
-                    onClick={() => setOpenImage(false)}
-                    style={{
-                      width: "100%",
-                      margin: "2rem",
-                    }}
-                  >
-                    {photos.map((item, index) => (
-                      <SwiperSlide key={item.index}>
-                        <div
-                          style={{
-                            background: `url(${item}) center, no-repeat`,
-                            backgroundSize: "contain",
-                            backgroundRepeat: "no-repeat",
-                            cursor: "pointer",
-                          }}
-                          className={classes.swiperContainer}
-                        ></div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
+                  <div className={classes.sliderContainer}>
+                    <div onClick={goToPrevious} className={classes.arrow}>
+                      <BiChevronLeft />
+                    </div>
+                    <div className={classes.imageContainer}>
+                      <Image
+                        src={photos[currentIndex]}
+                        fill={true}
+                        style={{ objectFit: "contain" }}
+                        alt={photos[currentIndex]}
+                      />
+                      <div
+                        onClick={() => setOpenImage(false)}
+                        className={classes.closeBtn}
+                      >
+                        <AiOutlineClose />
+                      </div>
+                    </div>
+
+                    <div onClick={goToNext} className={classes.arrow}>
+                      <BiChevronRight />
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
-          </>
+          </div>
         ))}
       </div>
       <div>
-        <Link href="">
+        <Link href="/contact">
           <button className={classes.bookingButton}>Book Now</button>
         </Link>
         <span>OR </span>

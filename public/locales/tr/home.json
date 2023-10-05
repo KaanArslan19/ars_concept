@@ -18,9 +18,7 @@
     "description": "Gelin Gümüldür ve yakınındaki görülmeye değer yerleri birlikte tanıyalım."
   },
   "footer": {
-    "header": "İletişim",
-    "description_left": "Açıklama yazısı",
-    "description_right": "Açıklama yazısı"
+    "header": "İletişim"
   },
   "map": {
     "direction": "Adrese git"

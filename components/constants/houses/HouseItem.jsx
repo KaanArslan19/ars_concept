@@ -5,7 +5,7 @@ import { BiArea, BiHome, BiMoney } from "react-icons/bi";
 import { useTranslation } from "next-i18next";
 
 const HouseItem = (props) => {
-  const { t: translate } = useTranslation("home");
+  const { t: translate } = useTranslation(["home", "house"]);
 
   return (
     <Link href={`/listings/${props.id}`}>
@@ -21,19 +21,21 @@ const HouseItem = (props) => {
           <h5>{props.title}</h5>
           <div className={classes.rowContainer}>
             <BiHome className={classes.icon} />
-            {translate("home:house_list.type")}: <span>{props.type}</span>
+            {translate("home:house_list.type")}:
+            <span>{translate(`house:${props.id}.type`)}</span>
           </div>
 
           <div className={classes.rowContainer}>
             <BiArea className={classes.icon} />
             {translate("home:house_list.totalArea")}:
-            <span>{props.totalArea}m2</span>
+            <span>{translate(`house:${props.id}.totalArea`)} m2</span>
           </div>
           <div className={classes.rowContainer}>
             <BiMoney className={classes.icon} />
             {translate("home:house_list.price")}:
             <span>
-              {props.price} TL / {translate("home:house_list.day")}
+              {translate(`house:${props.id}.price`)} TL /
+              {translate("home:house_list.day")}
             </span>
           </div>
         </div>

@@ -60,3 +60,6 @@ button {
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background: var(--color-primary) !important;
 }
+.swiper-slide-prev {
+  opacity: 0 !important;
+}

@@ -33,7 +33,10 @@ const FAQ = () => {
               />
             </AccordionButton>
           </h2>
-          <AccordionPanel pb={4}>
+          <AccordionPanel
+            pb={4}
+            fontSize={{ base: "12px", md: "14px", "2xl": "1rem" }}
+          >
             -{translate("home:faq.q1.answer")}
           </AccordionPanel>
         </AccordionItem>
@@ -55,7 +58,10 @@ const FAQ = () => {
               />
             </AccordionButton>
           </h2>
-          <AccordionPanel pb={4}>
+          <AccordionPanel
+            pb={4}
+            fontSize={{ base: "12px", md: "14px", "2xl": "1rem" }}
+          >
             -{translate("home:faq.q2.answer")}
           </AccordionPanel>
         </AccordionItem>
@@ -77,7 +83,10 @@ const FAQ = () => {
               />
             </AccordionButton>
           </h2>
-          <AccordionPanel pb={4}>
+          <AccordionPanel
+            pb={4}
+            fontSize={{ base: "12px", md: "14px", "2xl": "1rem" }}
+          >
             -{translate("home:faq.q3.answer")}
           </AccordionPanel>
         </AccordionItem>

@@ -20,10 +20,6 @@ const HouseList = ({ listings }) => {
               id={item.id}
               coverPhoto={item.coverPhoto}
               title={item.title}
-              description={item.description}
-              price={item.price}
-              type={item.type}
-              totalArea={item.totalArea}
             />
           ))}
         </ul>
