@@ -49,8 +49,8 @@ const BlogDetails = ({ id, title, imgUrl }) => {
         </Button>
       </Flex>
 
-      {descText.map((item) => (
-        <Text mt={"1rem"} mb={"1rem"} id="desc-text">
+      {descText.map((item, index) => (
+        <Text mt={"1rem"} mb={"1rem"} id="desc-text" key={item + index}>
           {item} <br />
           <br />
         </Text>

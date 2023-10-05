@@ -30,7 +30,7 @@ const BlogItem = (props) => {
         setIsOverflowing(true);
       }
     }
-  }, []);
+  }, [isMobile]);
   return (
     <Link href={`/blogs/${props.id}`}>
       <li className={classes.container}>

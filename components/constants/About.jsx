@@ -12,8 +12,8 @@ const About = () => {
     <Container centerContent mt={"2rem"} maxW={{ base: "768px", xl: "992px" }}>
       <Heading mb={"1rem"}>{translate("about:header")}</Heading>
 
-      {aboutText.map((item) => (
-        <Text mt={"1rem"} mb={"2rem"}>
+      {aboutText.map((item, index) => (
+        <Text mt={"1rem"} mb={"2rem"} key={item + index}>
           {item} <br />
           <br />
         </Text>
