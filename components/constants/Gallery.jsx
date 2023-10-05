@@ -13,14 +13,42 @@ import classes from "./Gallery.module.scss";
 import Image from "next/image";
 import { useState } from "react";
 import { useTranslation } from "next-i18next";
+import { AiOutlineClose } from "react-icons/ai";
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import { useMediaQuery } from "react-responsive";
 
-const Gallery = () => {
+const Gallery = ({ photos }) => {
   const { t: translate } = useTranslation("gallery");
-
+  const [openImage, setOpenImage] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedCollection, setSelectedCollection] = useState("");
   const [tabIndex, setTabIndex] = useState(0);
+  const isMobile = useMediaQuery({
+    query: "(max-width: 768px)",
+  });
   const handleTabChange = (index) => {
     setTabIndex(index);
   };
+
+  console.log(selectedCollection);
+  const goToPrevious = (collection) => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide
+      ? photos[collection].length - 1
+      : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+  const goToNext = (collection) => {
+    const isLastSlide = currentIndex === photos[collection].length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+  const imageClickHandler = (index, collection) => {
+    setCurrentIndex(index);
+    setOpenImage(true);
+    setSelectedCollection(collection);
+  };
+
   const tabItems = ["general", "rooms", "events"];
   return (
     <Container
@@ -38,73 +66,68 @@ const Gallery = () => {
         <TabPanels>
           <TabPanel>
             <SimpleGrid spacing={10} minChildWidth="250px">
-              <Box h="200px" border="1px solid">
-                <Image
-                  src="/images/ars_concept_logo.png"
-                  fill="true"
-                  style={{ objectFit: "contain" }}
-                  alt="logo"
-                  className={classes.img}
-                />
-              </Box>
-              <Box h="200px" border="1px solid">
-                <Image
-                  src="/images/ars_concept_logo.png"
-                  fill="true"
-                  alt="logo"
-                  className={classes.img}
-                  style={{ objectFit: "contain" }}
-                />
-              </Box>
-              <Box h="200px" border="1px solid">
-                <Image
-                  src="/images/ars_concept_logo.png"
-                  fill="true"
-                  alt="logo"
-                  className={classes.img}
-                  style={{ objectFit: "contain" }}
-                />
-              </Box>
-              <Box h="200px" border="1px solid">
-                <Image
-                  src="/images/ars_concept_logo.png"
-                  fill="true"
-                  alt="logo"
-                  className={classes.img}
-                  style={{ objectFit: "contain" }}
-                />
-              </Box>
+              {photos.generalView.map((item, index) => (
+                <Box
+                  h="200px"
+                  key={item + index}
+                  position="relative"
+                  onClick={() => imageClickHandler(index, "generalView")}
+                  cursor="pointer"
+                >
+                  <Image
+                    src={item}
+                    fill="true"
+                    style={{ objectFit: "cover" }}
+                    sizes="auto"
+                    alt={item + index}
+                    className={classes.img}
+                  />
+                </Box>
+              ))}
             </SimpleGrid>
           </TabPanel>
           <TabPanel>
             <SimpleGrid spacing={10} minChildWidth="250px">
-              <Box h="200px" border="1px solid">
-                <Image
-                  src="/images/ars_concept_logo.png"
-                  fill="true"
-                  alt="logo"
-                  className={classes.img}
-                  style={{ objectFit: "contain" }}
-                />
-              </Box>
-              <Box h="200px" border="1px solid">
-                <Image
-                  src="/images/ars_concept_logo.png"
-                  fill="true"
-                  alt="logo"
-                  className={classes.img}
-                  style={{ objectFit: "contain" }}
-                />
-              </Box>
-              <Box h="200px" border="1px solid">
-                <Image
-                  src="/images/ars_concept_logo.png"
-                  fill="true"
-                  alt="logo"
-                  className={classes.img}
-                  style={{ objectFit: "contain" }}
-                />
-              </Box>
+              {photos.rooms.map((item, index) => (
+                <Box
+                  h="200px"
+                  key={item + index}
+                  position="relative"
+                  onClick={() => imageClickHandler(index, "rooms")}
+                  cursor="pointer"
+                >
+                  <Image
+                    src={item}
+                    fill="true"
+                    style={{ objectFit: "cover" }}
+                    sizes="auto"
+                    alt={item + index}
+                    className={classes.img}
+                  />
+                </Box>
+              ))}
+            </SimpleGrid>
+          </TabPanel>
+          <TabPanel>
+            <SimpleGrid spacing={10} minChildWidth="250px">
+              {photos.events.map((item, index) => (
+                <Box
+                  h="200px"
+                  key={item + index}
+                  position="relative"
+                  onClick={() => imageClickHandler(index, "events")}
+                  cursor="pointer"
+                >
+                  <Image
+                    src={item}
+                    fill="true"
+                    style={{ objectFit: "cover" }}
+                    sizes="auto"
+                    alt={item + index}
+                    className={classes.img}
+                  />
+                </Box>
+              ))}
             </SimpleGrid>
           </TabPanel>
         </TabPanels>
@@ -114,6 +137,41 @@ const Gallery = () => {
           <Tab onClick={() => setTabIndex(2)}>3</Tab>
         </TabList>
       </Tabs>
+      {!isMobile && openImage && (
+        <div className={classes.overlay}>
+          <div className={classes.overlayContent}>
+            <div className={classes.sliderContainer}>
+              <div
+                onClick={() => goToPrevious(selectedCollection)}
+                className={classes.arrow}
+              >
+                <BiChevronLeft />
+              </div>
+              <div className={classes.imageContainer}>
+                <Image
+                  src={photos[selectedCollection][currentIndex]}
+                  fill={true}
+                  style={{ objectFit: "contain" }}
+                  alt={photos[currentIndex]}
+                />
+                <div
+                  onClick={() => setOpenImage(false)}
+                  className={classes.closeBtn}
+                >
+                  <AiOutlineClose />
+                </div>
+              </div>
+
+              <div
+                onClick={() => goToNext(selectedCollection)}
+                className={classes.arrow}
+              >
+                <BiChevronRight />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </Container>
   );
 };

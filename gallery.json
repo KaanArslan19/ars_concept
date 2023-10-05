@@ -1,0 +1,23 @@
+{
+  "generalView": [
+    "/images/houses/Satsuma/S_G5.jpg",
+    "/images/houses/Satsuma/S_G7.jpg",
+    "/images/houses/Satsuma/S_G18.jpg",
+    "/images/houses/Okitsu/O_G5.jpg",
+    "/images/houses/Okitsu/O_G19.jpg"
+  ],
+  "rooms": [
+    "/images/houses/Satsuma/S_R12.jpg",
+    "/images/houses/Satsuma/S_R13.jpg",
+    "/images/houses/Satsuma/S_R14.jpg",
+    "/images/houses/Satsuma/S_R15.jpg",
+    "/images/houses/Satsuma/S_R16.jpg",
+    "/images/houses/Satsuma/S_R17.jpg"
+  ],
+  "events": [
+    "/images/houses/events/E_1.jpeg",
+    "/images/houses/events/E_2.jpeg",
+    "/images/houses/events/E_3.jpeg",
+    "/images/houses/events/E_4.jpeg"
+  ]
+}

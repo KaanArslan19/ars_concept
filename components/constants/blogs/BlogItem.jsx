@@ -19,14 +19,16 @@ const BlogItem = (props) => {
   const maxLines = 2;
 
   useEffect(() => {
-    const paragraphElement = paragraphRef.current;
-    const lineHeight = parseFloat(
-      window.getComputedStyle(paragraphElement).lineHeight
-    );
-    const maxHeight = lineHeight * maxLines;
+    if (!isMobile) {
+      const paragraphElement = paragraphRef.current;
+      const lineHeight = parseFloat(
+        window.getComputedStyle(paragraphElement).lineHeight
+      );
+      const maxHeight = lineHeight * maxLines;
 
-    if (paragraphElement.clientHeight > maxHeight) {
-      setIsOverflowing(true);
+      if (paragraphElement.clientHeight > maxHeight) {
+        setIsOverflowing(true);
+      }
     }
   }, []);
   return (

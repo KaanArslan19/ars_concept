@@ -5,9 +5,13 @@ import { useState } from "react";
 
 import { BiChevronLeft, BiChevronRight, BiWindowClose } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
+import { useMediaQuery } from "react-responsive";
 const PhotoGallery = ({ photos }) => {
   const [openImage, setOpenImage] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const isMobile = useMediaQuery({
+    query: "(max-width: 768px)",
+  });
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? photos.length - 1 : currentIndex - 1;
@@ -18,6 +22,10 @@ const PhotoGallery = ({ photos }) => {
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
+  const imageClickHandler = (index) => {
+    setOpenImage(true);
+    setCurrentIndex(index);
+  };
   return (
     <div className={classes.container}>
       {photos.length !== 0 && (
@@ -26,7 +34,7 @@ const PhotoGallery = ({ photos }) => {
           <div className={classes.list}>
             {photos.map((item, index) => (
               <div key={item + index}>
-                <button onClick={() => setOpenImage(true)}>
+                <button onClick={() => imageClickHandler(index)}>
                   <li className={classes.imgBox}>
                     <Image
                       src={item}
@@ -37,7 +45,7 @@ const PhotoGallery = ({ photos }) => {
                     />
                   </li>
                 </button>
-                {openImage && (
+                {!isMobile && openImage && (
                   <div className={classes.overlay}>
                     <div className={classes.overlayContent}>
                       <div className={classes.sliderContainer}>

@@ -2,30 +2,30 @@
   {
     "id": "th1",
     "title": "Satsuma",
-    "coverPhoto": "/images/houses/Satsuma/S_5.jpg",
+    "coverPhoto": "/images/houses/Satsuma/S_G5.jpg",
     "photos": [
       "/images/houses/Satsuma/S_1.jpg",
       "/images/houses/Satsuma/S_2.jpg",
-      "/images/houses/Satsuma/S_5.jpg",
+      "/images/houses/Satsuma/S_G5.jpg",
       "/images/houses/Satsuma/S_6.jpg",
-      "/images/houses/Satsuma/S_7.jpg",
+      "/images/houses/Satsuma/S_G7.jpg",
       "/images/houses/Satsuma/S_9.jpg",
       "/images/houses/Satsuma/S_11.jpg",
-      "/images/houses/Satsuma/S_12.jpg",
-      "/images/houses/Satsuma/S_13.jpg",
-      "/images/houses/Satsuma/S_14.jpg",
-      "/images/houses/Satsuma/S_15.jpg",
-      "/images/houses/Satsuma/S_16.jpg",
-      "/images/houses/Satsuma/S_17.jpg",
-      "/images/houses/Satsuma/S_18.jpg"
+      "/images/houses/Satsuma/S_R12.jpg",
+      "/images/houses/Satsuma/S_R13.jpg",
+      "/images/houses/Satsuma/S_R14.jpg",
+      "/images/houses/Satsuma/S_R15.jpg",
+      "/images/houses/Satsuma/S_R16.jpg",
+      "/images/houses/Satsuma/S_R17.jpg",
+      "/images/houses/Satsuma/S_G18.jpg"
     ]
   },
   {
     "id": "th2",
     "title": "Okitsu",
-    "coverPhoto": "/images/houses/Okitsu/O_5.jpg",
+    "coverPhoto": "/images/houses/Okitsu/O_G5.jpg",
     "photos": [
-      "/images/houses/Okitsu/O_5.jpg",
+      "/images/houses/Okitsu/O_G5.jpg",
       "/images/houses/Okitsu/O_6.jpg",
       "/images/houses/Okitsu/O_7.jpg",
       "/images/houses/Okitsu/O_9.jpg",
@@ -36,7 +36,7 @@
       "/images/houses/Okitsu/O_15.jpg",
       "/images/houses/Okitsu/O_16.jpg",
       "/images/houses/Okitsu/O_17.jpg",
-      "/images/houses/Okitsu/O_19.jpg"
+      "/images/houses/Okitsu/O_G19.jpg"
     ]
   },
 

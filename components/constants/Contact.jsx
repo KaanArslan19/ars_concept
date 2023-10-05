@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Map from "../ui/Map/index";
-import classes from "./Contact.module.scss";
 import { Box, Button, Container, Flex, Heading, Text } from "@chakra-ui/react";
 import { SiAirbnb } from "react-icons/si";
 import { useTranslation } from "next-i18next";
