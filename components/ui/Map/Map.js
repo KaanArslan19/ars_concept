@@ -38,7 +38,7 @@ const Map = () => {
       <Link href="https://goo.gl/maps/srsMMo7GNB2Qvmjp8" target="_blank">
         <Button
           position="absolute"
-          zIndex="10"
+          zIndex="1000"
           right="0"
           mt="2rem"
           mr="2rem"

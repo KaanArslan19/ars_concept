@@ -51,8 +51,7 @@ const BlogDetails = ({ id, title, imgUrl }) => {
 
       {descText.map((item, index) => (
         <Text mt={"1rem"} mb={"1rem"} id="desc-text" key={item + index}>
-          {item} <br />
-          <br />
+          {item}
         </Text>
       ))}
     </Container>

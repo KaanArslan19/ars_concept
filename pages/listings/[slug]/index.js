@@ -30,15 +30,21 @@ const HouseDetailPage = (props) => {
 
 export default HouseDetailPage;
 
-export async function getStaticPaths() {
+export async function getStaticPaths({ locales }) {
   const filePath = "./data.json";
   const rawData = await fs.readFile(filePath, "utf8");
   const data = JSON.parse(rawData);
-  const paths = data.map((item) => ({
-    params: {
-      slug: item.id,
-    },
-  }));
+  let paths = [];
+  data.forEach((item) => {
+    for (const locale of locales) {
+      paths.push({
+        params: {
+          slug: item.id,
+        },
+        locale,
+      });
+    }
+  });
   return {
     paths,
     fallback: "blocking",

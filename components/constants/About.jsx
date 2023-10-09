@@ -14,8 +14,7 @@ const About = () => {
 
       {aboutText.map((item, index) => (
         <Text mt={"1rem"} mb={"2rem"} key={item + index}>
-          {item} <br />
-          <br />
+          {item}
         </Text>
       ))}
     </Container>
