@@ -23,7 +23,7 @@ const FAQ = () => {
                 as="span"
                 flex="1"
                 textAlign="left"
-                fontSize={{ base: "1rem", md: "1.2rem", "2xl": "1.5rem" }}
+                fontSize={{ base: "1rem", md: "18px", "2xl": "20px" }}
               >
                 1. {translate("home:faq.q1.header")}
               </Box>
@@ -48,7 +48,7 @@ const FAQ = () => {
                 as="span"
                 flex="1"
                 textAlign="left"
-                fontSize={{ base: "1rem", md: "1.2rem", "2xl": "1.5rem" }}
+                fontSize={{ base: "1rem", md: "18px", "2xl": "20px" }}
               >
                 2.{translate("home:faq.q2.header")}
               </Box>
@@ -73,7 +73,7 @@ const FAQ = () => {
                 as="span"
                 flex="1"
                 textAlign="left"
-                fontSize={{ base: "1rem", md: "1.2rem", "2xl": "1.5rem" }}
+                fontSize={{ base: "1rem", md: "18px", "2xl": "20px" }}
               >
                 3.{translate("home:faq.q3.header")}
               </Box>
