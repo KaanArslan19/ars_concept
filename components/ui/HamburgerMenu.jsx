@@ -4,10 +4,17 @@ import { BiMenu } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 
 const HamburgerMenu = ({ navbarItems }) => {
-  const [toggle, setToggle] = useState(false);
+  const { push } = useRouter();
 
+  const [toggle, setToggle] = useState(false);
+  const handleLangClick = (l) => () => {
+    push("/", undefined, { locale: l });
+    setToggle(false);
+  };
   return (
     <div className={classes.container}>
       {!toggle ? (
@@ -53,12 +60,14 @@ const HamburgerMenu = ({ navbarItems }) => {
                 width={24}
                 height={24}
                 alt="turkey_flag"
+                onClick={handleLangClick("tr")}
               />
               <Image
                 src="/images/great_britain_flag.png"
                 width={24}
                 height={24}
                 alt="great_britain_flag"
+                onClick={handleLangClick("en")}
               />
             </div>
           </ul>

@@ -49,12 +49,6 @@ svg {
   border: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
-
 .swiper-button-next:after,
 .swiper-button-prev:after {
   color: var(--color-primary);
