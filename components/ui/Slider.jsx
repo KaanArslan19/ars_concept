@@ -41,7 +41,6 @@ const Slider = ({ listings }) => {
           ></div>
           <span className={classes.contentInfo}>{item.title}</span>
           <span className={classes.slogan}>
-            {" "}
             {translate("home:slider.slogan")}
           </span>
         </SwiperSlide>

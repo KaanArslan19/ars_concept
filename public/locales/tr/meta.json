@@ -19,5 +19,8 @@
     "title": "Tiny Evlerimiz",
     "content": "Ars Concept Houses tiny, bungalov ve üçgen evleri hakkındaki detaylı bilgilere buradan ulaşabilirsiniz"
   },
-  "home": { "title": "Ars Concept Houses", "content": "Ars Concept Houses" }
+  "home": {
+    "title": "Ars Concept Houses",
+    "content": "Ars Concept Houses, kiralık ev, kiralık yazlık, kiralık villa"
+  }
 }
