@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 
 const HamburgerMenu = ({ navbarItems }) => {
   const { push } = useRouter();
+  const { t: translate } = useTranslation("home");
 
   const [toggle, setToggle] = useState(false);
   const handleLangClick = (l) => () => {
@@ -50,7 +51,7 @@ const HamburgerMenu = ({ navbarItems }) => {
                     setToggle(false);
                   }}
                 >
-                  {item.title}
+                  {translate(`home:navbar.${item.title}`)}
                 </Link>
               </li>
             ))}
