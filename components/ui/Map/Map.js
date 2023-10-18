@@ -43,6 +43,7 @@ const Map = () => {
           mt="2rem"
           mr="2rem"
           leftIcon={<FaDirections />}
+          fontSize={{ base: "12px", md: "16px", xl: "20" }}
         >
           {translate("home:map.direction")}
         </Button>

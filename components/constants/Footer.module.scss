@@ -19,6 +19,9 @@
 .columnContainer:first-child {
   margin-right: 4rem;
 }
+.columnContainer {
+  margin-right: 0.5rem;
+}
 .rowContainer {
   display: flex;
   align-items: center;

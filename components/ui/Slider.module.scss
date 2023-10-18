@@ -9,8 +9,28 @@
   .imgContainer {
     height: 450px;
   }
-  .slogan {
+  .slogan,
+  .contentInfo {
     font-size: 12px;
+  }
+}
+@include largeScreen {
+  .imgContainer {
+    height: 800px;
+  }
+  .slogan,
+  .contentInfo {
+    font-size: 20px;
+  }
+}
+
+@include xLargeScreen {
+  .imgContainer {
+    height: 1000px;
+  }
+  .slogan,
+  .contentInfo {
+    font-size: 24px;
   }
 }
 
@@ -23,7 +43,7 @@
   border: 1px solid var(--color-primary);
   border-radius: 5px;
   color: var(--color-cream);
-
+  font-weight: bold;
   background-color: var(--color-primary);
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;

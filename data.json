@@ -2,33 +2,53 @@
   {
     "id": "th1",
     "title": "Satsuma",
-    "coverPhoto": "/images/houses/Satsuma/S_G5.jpg",
+    "coverPhoto": "/images/houses/Satsuma/S_1-1.jpg",
     "photos": [
-      "/images/houses/Satsuma/S_1.jpg",
+      "/images/houses/Satsuma/S_1-1.jpg",
+      "/images/houses/Satsuma/S_1-2.jpg",
       "/images/houses/Satsuma/S_2.jpg",
-      "/images/houses/Satsuma/S_G5.jpg",
-      "/images/houses/Satsuma/S_6.jpg",
-      "/images/houses/Satsuma/S_G7.jpg",
+      "/images/houses/Satsuma/S_3.jpg",
+      "/images/houses/Satsuma/S_4.jpg",
+      "/images/houses/Satsuma/S_5.jpg",
+      "/images/houses/Satsuma/S_6-1.jpg",
+      "/images/houses/Satsuma/S_6-2.jpg",
+      "/images/houses/Satsuma/S_7.jpg",
+      "/images/houses/Satsuma/S_8.jpg",
       "/images/houses/Satsuma/S_9.jpg",
+      "/images/houses/Satsuma/S_10.jpg",
       "/images/houses/Satsuma/S_11.jpg",
-      "/images/houses/Satsuma/S_R12.jpg",
-      "/images/houses/Satsuma/S_R13.jpg",
-      "/images/houses/Satsuma/S_R14.jpg",
-      "/images/houses/Satsuma/S_R15.jpg",
-      "/images/houses/Satsuma/S_R16.jpg",
-      "/images/houses/Satsuma/S_R17.jpg",
-      "/images/houses/Satsuma/S_G18.jpg"
+      "/images/houses/Satsuma/S_12.jpg",
+      "/images/houses/Satsuma/S_13.jpg",
+      "/images/houses/Satsuma/S_14.jpg",
+      "/images/houses/Satsuma/S_15.jpg",
+      "/images/houses/Satsuma/S_16.jpg",
+      "/images/houses/Satsuma/S_17.jpg",
+      "/images/houses/Satsuma/S_18.jpg",
+      "/images/houses/Satsuma/S_19.jpg",
+      "/images/houses/Satsuma/S_20.jpg",
+      "/images/houses/Satsuma/S_21.jpg",
+      "/images/houses/Satsuma/S_22.jpg",
+      "/images/houses/Satsuma/S_23.jpg",
+      "/images/houses/Satsuma/S_24.jpg",
+      "/images/houses/Satsuma/S_25.jpg",
+      "/images/houses/Satsuma/S_26.jpg",
+      "/images/houses/Satsuma/S_27.jpg"
     ]
   },
   {
     "id": "th2",
     "title": "Okitsu",
-    "coverPhoto": "/images/houses/Okitsu/O_G5.jpg",
+    "coverPhoto": "/images/houses/Okitsu/O_1.jpeg",
     "photos": [
-      "/images/houses/Okitsu/O_G5.jpg",
+      "/images/houses/Okitsu/O_2.jpg",
+      "/images/houses/Okitsu/O_3.jpg",
+      "/images/houses/Okitsu/O_4.jpg",
+      "/images/houses/Okitsu/O_5.jpg",
       "/images/houses/Okitsu/O_6.jpg",
       "/images/houses/Okitsu/O_7.jpg",
+      "/images/houses/Okitsu/O_8.jpg",
       "/images/houses/Okitsu/O_9.jpg",
+      "/images/houses/Okitsu/O_10.jpg",
       "/images/houses/Okitsu/O_11.jpg",
       "/images/houses/Okitsu/O_12.jpg",
       "/images/houses/Okitsu/O_13.jpg",
@@ -36,14 +56,26 @@
       "/images/houses/Okitsu/O_15.jpg",
       "/images/houses/Okitsu/O_16.jpg",
       "/images/houses/Okitsu/O_17.jpg",
-      "/images/houses/Okitsu/O_G19.jpg"
+      "/images/houses/Okitsu/O_18.jpg",
+      "/images/houses/Okitsu/O_19.jpg",
+      "/images/houses/Okitsu/O_20.jpg",
+      "/images/houses/Okitsu/O_21.jpg",
+      "/images/houses/Okitsu/O_22.jpg",
+      "/images/houses/Okitsu/O_23.jpg",
+      "/images/houses/Okitsu/O_24.jpg"
     ]
   },
 
   {
     "id": "th3",
     "title": "Fuerte",
-    "coverPhoto": "/images/houses/Fuerte/F_1.jpeg",
-    "photos": []
+    "coverPhoto": "/images/houses/Fuerte/F_1.jpg",
+    "photos": [
+      "/images/houses/Fuerte/F_2.jpg",
+      "/images/houses/Fuerte/F_3.jpg",
+      "/images/houses/Fuerte/F_4.jpg",
+      "/images/houses/Fuerte/F_5.jpg",
+      "/images/houses/Fuerte/F_6.jpg"
+    ]
   }
 ]
