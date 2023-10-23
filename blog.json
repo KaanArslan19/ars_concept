@@ -2,17 +2,32 @@
   {
     "id": "b1",
     "title": "Değirmendere Waterfall",
-    "imgUrl": "/images/waterfall.jpg"
+    "imgUrl": "/images/blogs/waterfall.jpg"
   },
   {
     "id": "b2",
     "title": "Claros Ancient City",
-    "imgUrl": "/images/clarosAncientCity.jpg"
+    "imgUrl": "/images/blogs/clarosAncientCity.jpg"
   },
 
   {
     "id": "b3",
     "title": "History of Mandarin",
-    "imgUrl": "/images/mandarinHistory.jpg"
+    "imgUrl": "/images/blogs/mandarinHistory.jpg"
+  },
+  {
+    "id": "b4",
+    "title": "Daily Boat tours",
+    "imgUrl": "/images/blogs/boat_tour.jpg"
+  },
+  {
+    "id": "b5",
+    "title": "Natural park",
+    "imgUrl": "/images/blogs/nature_park.jpg"
+  },
+  {
+    "id": "b6",
+    "title": "About Gumuldur",
+    "imgUrl": "/images/blogs/about_gumuldur.jpg"
   }
 ]
