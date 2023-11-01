@@ -55,7 +55,7 @@ const Gallery = ({ photos }) => {
       mt={"2rem"}
       maxW={{ base: "992px", xl: "1280px", "2xl": "1536px" }}
     >
-      <Heading textAlign="center" mb="2rem">
+      <Heading as="h1" textAlign="center" mb="2rem">
         {tabItems.map((item, index) => {
           if (index === tabIndex) {
             return translate(`gallery:${item}`);

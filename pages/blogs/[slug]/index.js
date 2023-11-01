@@ -10,18 +10,28 @@ const BlogDetailPage = (props) => {
   return (
     <div>
       <Head>
-        <title>{translate("meta:blogDetails.title")}</title>
+        <meta property="og:image" content="/images/ars_concept_logo.png" />
+        <meta property="og:image:width" content="200px" />
+        <meta property="og:image:height" content="200px" />
+        <meta property="og:image:alt" content={translate("meta:home.title")} />
+        <title>
+          {translate(`meta:blogDetails.${props.blogData.id}.title`)}
+        </title>
+        <link
+          rel="canonical"
+          href={`https://www.arsconcepthouses.com/blogs/${props.blogData.id}`}
+        />
         <meta
           name="description"
-          content={translate("meta:blogDetails.content")}
+          content={translate(`meta:blogDetails.${props.blogData.id}.content`)}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon_ars.ico" />
       </Head>
       <BlogDetails
-        id={props.houseData.id}
-        title={props.houseData.title}
-        imgUrl={props.houseData.imgUrl}
+        id={props.blogData.id}
+        title={props.blogData.title}
+        imgUrl={props.blogData.imgUrl}
       />
     </div>
   );
@@ -59,7 +69,7 @@ export async function getStaticProps({ params, locale }) {
 
   return {
     props: {
-      houseData: {
+      blogData: {
         id: filteredBlog.id,
         title: filteredBlog.title,
         imgUrl: filteredBlog.imgUrl,

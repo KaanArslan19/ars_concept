@@ -10,6 +10,11 @@ export default function GalleryPage(props) {
   return (
     <>
       <Head>
+        <meta property="og:image" content="/images/ars_concept_logo.png" />
+        <meta property="og:image:width" content="200px" />
+        <meta property="og:image:height" content="200px" />
+        <meta property="og:image:alt" content={translate("meta:home.title")} />
+        <link rel="canonical" href="https://www.arsconcepthouses.com/gallery" />
         <title>{translate("meta:gallery.title")}</title>
         <meta name="description" content={translate("meta:gallery.content")} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

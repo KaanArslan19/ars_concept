@@ -12,7 +12,9 @@ const Contact = ({ airbnbId }) => {
       mt={"2rem"}
       maxW={{ base: "992px", xl: "1280px", "2xl": "1536px" }}
     >
-      <Heading textAlign="center">{translate("contact:header")}</Heading>
+      <Heading as="h1" textAlign="center">
+        {translate("contact:header")}
+      </Heading>
       <Flex justify="space-between" direction={{ base: "column", md: "row" }}>
         <Flex
           mr={{ base: "0", md: "8rem" }}

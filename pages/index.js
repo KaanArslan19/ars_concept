@@ -10,6 +10,11 @@ export default function HomePage(props) {
   return (
     <>
       <Head>
+        <meta property="og:image" content="/images/ars_concept_logo.png" />
+        <meta property="og:image:width" content="200px" />
+        <meta property="og:image:height" content="200px" />
+        <meta property="og:image:alt" content={translate("meta:home.title")} />
+        <link rel="canonical" href="https://www.arsconcepthouses.com" />
         <title>{translate("meta:home.title")}</title>
         <meta name="description" content={translate("meta:home.content")} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

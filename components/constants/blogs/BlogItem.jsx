@@ -35,7 +35,7 @@ const BlogItem = (props) => {
     <Link href={`/blogs/${props.id}`}>
       <li className={classes.container}>
         <div className={classes.content}>
-          <h5>{translate(`blog:${props.id}.title`)}</h5>
+          <h1>{translate(`blog:${props.id}.title`)}</h1>
           {!isMobile && (
             <p
               id="restricted-paragraph"

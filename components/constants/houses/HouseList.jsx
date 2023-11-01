@@ -10,7 +10,7 @@ const HouseList = ({ listings }) => {
     <Fragment>
       <div className={classes.listContainer}>
         <div className={classes.content}>
-          <Heading>{translate("home:house_list.header")}</Heading>
+          <Heading as="h1">{translate("home:house_list.header")}</Heading>
           <span>{translate("home:house_list.description")}</span>
         </div>
         <ul className={classes.list}>

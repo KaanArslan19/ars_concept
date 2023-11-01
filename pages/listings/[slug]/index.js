@@ -12,8 +12,19 @@ const HouseDetailPage = (props) => {
   return (
     <Fragment>
       <Head>
-        <title>{translate("meta:listings.title")}</title>
-        <meta name="description" content={translate("meta:listings.content")} />
+        <meta property="og:image" content="/images/ars_concept_logo.png" />
+        <meta property="og:image:width" content="200px" />
+        <meta property="og:image:height" content="200px" />
+        <meta property="og:image:alt" content={translate("meta:home.title")} />
+        <link
+          rel="canonical"
+          href={`https://www.arsconcepthouses.com/blogs/${props.houseData.id}`}
+        />
+        <title>{translate(`meta:listings.${props.houseData.id}.title`)}</title>
+        <meta
+          name="description"
+          content={translate(`meta:listings.${props.houseData.id}.content`)}
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon_ars.ico" />
       </Head>
