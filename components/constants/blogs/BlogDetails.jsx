@@ -15,7 +15,9 @@ const BlogDetails = ({ id, title, imgUrl }) => {
   const descText = splitStringAtNewlines(translate(`blog:${id}.description`));
   return (
     <Container centerContent mt={"2rem"} maxW={{ base: "768px", xl: "992px" }}>
-      <Heading mb={"1rem"}>{translate(`blog:${id}.title`)}</Heading>
+      <Heading as="h1" mb={"1rem"}>
+        {translate(`blog:${id}.title`)}
+      </Heading>
       <Image
         src={imgUrl}
         fill={true}
