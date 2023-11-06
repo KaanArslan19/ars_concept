@@ -54,5 +54,9 @@
   "home": {
     "title": "Ars Concept Houses",
     "content": "Ars concept houses Gümüldür Menderes'te merkeze, sahile 5 dk uzaklıkta; Özdere ve Ürkmez tatil beldelerinin ortasında yazlık tadında, otel konforunda bahçeli, kiralık villa arayanların Gümüldür'deki adresi, kiralık ev, kiralık yazlık, bahçeli ev, loft, dubleks villa"
+  },
+  "error": {
+    "title": "Ars Concept Houses",
+    "content": "Yanlış bir uzantı girdiniz. Mevcut evlerimize göz atmak, hakkımızda bilgi edinmek veya anasayfaya dönmek için menüyü kullanabilirsiniz."
   }
 }
