@@ -5,13 +5,11 @@ import { useState } from "react";
 
 import { BiChevronLeft, BiChevronRight, BiWindowClose } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
-import { useMediaQuery } from "react-responsive";
+import useBetterMediaQuery from "@/hooks/useBetterMediaQuery";
 const PhotoGallery = ({ photos }) => {
   const [openImage, setOpenImage] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const isMobile = useMediaQuery({
-    query: "(max-width: 768px)",
-  });
+  const isMobile = useBetterMediaQuery("(max-width: 768px)");
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? photos.length - 1 : currentIndex - 1;

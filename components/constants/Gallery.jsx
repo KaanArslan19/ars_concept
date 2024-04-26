@@ -15,7 +15,7 @@ import { useState } from "react";
 import { useTranslation } from "next-i18next";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
-import { useMediaQuery } from "react-responsive";
+import useBetterMediaQuery from "@/hooks/useBetterMediaQuery";
 
 const Gallery = ({ photos }) => {
   const { t: translate } = useTranslation("gallery");
@@ -23,9 +23,7 @@ const Gallery = ({ photos }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedCollection, setSelectedCollection] = useState("");
   const [tabIndex, setTabIndex] = useState(0);
-  const isMobile = useMediaQuery({
-    query: "(max-width: 768px)",
-  });
+  const isMobile = useBetterMediaQuery("(max-width: 768px)");
   const handleTabChange = (index) => {
     setTabIndex(index);
   };

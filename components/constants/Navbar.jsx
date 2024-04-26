@@ -2,11 +2,11 @@ import classes from "./Navbar.module.scss";
 
 import Link from "next/link";
 import Image from "next/image";
-import { useMediaQuery } from "react-responsive";
 
 import HamburgerMenu from "../ui/HamburgerMenu";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
+import useBetterMediaQuery from "@/hooks/useBetterMediaQuery";
 
 const Navbar = () => {
   const { push } = useRouter();
@@ -21,9 +21,7 @@ const Navbar = () => {
   const handleLangClick = (l) => () => {
     push("/", undefined, { locale: l });
   };
-  const isMobile = useMediaQuery({
-    query: "(max-width: 768px)",
-  });
+  const isMobile = useBetterMediaQuery("(max-width: 768px)");
   return (
     <nav className={classes.container}>
       <Link href="/">

@@ -4,11 +4,9 @@ import Map from "../ui/Map/index";
 import HouseList from "../constants/houses/HouseList";
 import BlogList from "../constants/blogs/BlogList";
 import FAQ from "../ui/FAQ";
-import { useMediaQuery } from "react-responsive";
+import useBetterMediaQuery from "@/hooks/useBetterMediaQuery";
 const Home = ({ listings, blogs }) => {
-  const isNotXXLargeScreen = useMediaQuery({
-    query: "(max-width: 2561px)",
-  });
+  const isNotXXLargeScreen = useBetterMediaQuery("(max-width: 2561px)");
   return (
     <div className={classes.container}>
       {isNotXXLargeScreen && (

@@ -4,16 +4,12 @@ import Image from "next/image";
 import { IoSparklesOutline } from "react-icons/io5";
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "next-i18next";
-import { useMediaQuery } from "react-responsive";
+import useBetterMediaQuery from "@/hooks/useBetterMediaQuery";
 
 const BlogItem = (props) => {
   const { t: translate } = useTranslation("blog");
-  const isMobile = useMediaQuery({
-    query: "(max-width: 550px)",
-  });
-  const isMidScreen = useMediaQuery({
-    query: "(max-width: 1400px)",
-  });
+  const isMobile = useBetterMediaQuery("(max-width: 550px)");
+  const isMidScreen = useBetterMediaQuery("(max-width: 1400px)");
   const [isOverflowing, setIsOverflowing] = useState(false);
   const paragraphRef = useRef(null);
   const maxLines = 2;
