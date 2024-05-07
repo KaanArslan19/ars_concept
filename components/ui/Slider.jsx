@@ -10,11 +10,20 @@ import SwiperCore, {
 import "swiper/css/bundle";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
+import Image from "next/image";
+import { urlFor } from "@/client";
 
 const Slider = ({ listings }) => {
   SwiperCore.use([Autoplay, Navigation, Pagination]);
   const router = useRouter();
   const { t: translate } = useTranslation("home");
+  const mappedData = listings.map((item) => {
+    return {
+      id: item._id,
+      title: item.title,
+      thumbnail: item.thumbnail,
+    };
+  });
 
   return (
     <Swiper
@@ -25,26 +34,28 @@ const Slider = ({ listings }) => {
       modules={[EffectFade]}
       autoplay={{ delay: 3000 }}
     >
-      {listings.map((item) => (
-        <SwiperSlide
-          key={item.id}
-          onClick={() => router.push(`listings/${item.id}`)}
-        >
-          <div
-            style={{
-              background: `url(${item.coverPhoto}) center, no-repeat`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              cursor: "pointer",
-            }}
-            className={classes.imgContainer}
-          ></div>
-          <span className={classes.contentInfo}>{item.title}</span>
-          <span className={classes.slogan}>
-            {translate("home:slider.slogan")}
-          </span>
-        </SwiperSlide>
-      ))}
+      {mappedData &&
+        mappedData.map((item) => (
+          <SwiperSlide
+            key={item.id}
+            onClick={() => router.push(`listings/${item.id}`)}
+          >
+            <div className={classes.imgContainer}>
+              <Image
+                src={urlFor(item.thumbnail).url()}
+                alt={item.title}
+                fill="true"
+                style={{ objectFit: "cover" }}
+                onClick={() => router.push(`listings/${item.id}`)}
+              />
+            </div>
+
+            <span className={classes.contentInfo}>{item.title}</span>
+            <span className={classes.slogan}>
+              {translate("home:slider.slogan")}
+            </span>
+          </SwiperSlide>
+        ))}
     </Swiper>
   );
 };

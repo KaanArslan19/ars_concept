@@ -2,7 +2,7 @@
 .imgContainer {
   width: 100%;
   position: relative !important;
-  height: 600px;
+  height: 800px;
   overflow: hidden;
 }
 @include mobile {
@@ -16,7 +16,7 @@
 }
 @include largeScreen {
   .imgContainer {
-    height: 800px;
+    height: 1000px;
   }
   .slogan,
   .contentInfo {
@@ -26,7 +26,7 @@
 
 @include xLargeScreen {
   .imgContainer {
-    height: 1000px;
+    height: 1200px;
   }
   .slogan,
   .contentInfo {

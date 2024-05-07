@@ -11,33 +11,33 @@ import {
 } from "@chakra-ui/react";
 import classes from "./Gallery.module.scss";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "next-i18next";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import useBetterMediaQuery from "@/hooks/useBetterMediaQuery";
+import { urlFor } from "@/client";
 
-const Gallery = ({ photos }) => {
+const Gallery = ({ generalView, rooms, events }) => {
   const { t: translate } = useTranslation("gallery");
   const [openImage, setOpenImage] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedCollection, setSelectedCollection] = useState("");
+  const [selectedCollection, setSelectedCollection] = useState([]);
   const [tabIndex, setTabIndex] = useState(0);
   const isMobile = useBetterMediaQuery("(max-width: 768px)");
   const handleTabChange = (index) => {
     setTabIndex(index);
   };
 
-  console.log(selectedCollection);
   const goToPrevious = (collection) => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide
-      ? photos[collection].length - 1
+      ? collection.flat().length - 1
       : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
   const goToNext = (collection) => {
-    const isLastSlide = currentIndex === photos[collection].length - 1;
+    const isLastSlide = currentIndex === collection.flat().length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
@@ -64,68 +64,71 @@ const Gallery = ({ photos }) => {
         <TabPanels>
           <TabPanel>
             <SimpleGrid spacing={10} minChildWidth="250px">
-              {photos.generalView.map((item, index) => (
-                <Box
-                  h="200px"
-                  key={item + index}
-                  position="relative"
-                  onClick={() => imageClickHandler(index, "generalView")}
-                  cursor="pointer"
-                >
-                  <Image
-                    src={item}
-                    fill="true"
-                    style={{ objectFit: "cover" }}
-                    sizes="auto"
-                    alt={item + index}
-                    className={classes.img}
-                  />
-                </Box>
-              ))}
+              {generalView &&
+                generalView.flat().map((item, index) => (
+                  <Box
+                    h="200px"
+                    key={item + index}
+                    position="relative"
+                    onClick={() => imageClickHandler(index, generalView)}
+                    cursor="pointer"
+                  >
+                    <Image
+                      src={urlFor(item).url()}
+                      fill="true"
+                      style={{ objectFit: "cover" }}
+                      sizes="auto"
+                      alt={item.alt}
+                      className={classes.img}
+                    />
+                  </Box>
+                ))}
             </SimpleGrid>
           </TabPanel>
           <TabPanel>
             <SimpleGrid spacing={10} minChildWidth="250px">
-              {photos.rooms.map((item, index) => (
-                <Box
-                  h="200px"
-                  key={item + index}
-                  position="relative"
-                  onClick={() => imageClickHandler(index, "rooms")}
-                  cursor="pointer"
-                >
-                  <Image
-                    src={item}
-                    fill="true"
-                    style={{ objectFit: "cover" }}
-                    sizes="auto"
-                    alt={item + index}
-                    className={classes.img}
-                  />
-                </Box>
-              ))}
+              {rooms &&
+                rooms.flat().map((item, index) => (
+                  <Box
+                    h="200px"
+                    key={item + index}
+                    position="relative"
+                    onClick={() => imageClickHandler(index, rooms)}
+                    cursor="pointer"
+                  >
+                    <Image
+                      src={urlFor(item).url()}
+                      fill="true"
+                      style={{ objectFit: "cover" }}
+                      sizes="auto"
+                      alt={item + index}
+                      className={classes.img}
+                    />
+                  </Box>
+                ))}
             </SimpleGrid>
           </TabPanel>
           <TabPanel>
             <SimpleGrid spacing={10} minChildWidth="250px">
-              {photos.events.map((item, index) => (
-                <Box
-                  h="200px"
-                  key={item + index}
-                  position="relative"
-                  onClick={() => imageClickHandler(index, "events")}
-                  cursor="pointer"
-                >
-                  <Image
-                    src={item}
-                    fill="true"
-                    style={{ objectFit: "cover" }}
-                    sizes="auto"
-                    alt={item + index}
-                    className={classes.img}
-                  />
-                </Box>
-              ))}
+              {events &&
+                events.flat().map((item, index) => (
+                  <Box
+                    h="200px"
+                    key={item + index}
+                    position="relative"
+                    onClick={() => imageClickHandler(index, events)}
+                    cursor="pointer"
+                  >
+                    <Image
+                      src={urlFor(item).url()}
+                      fill="true"
+                      style={{ objectFit: "cover" }}
+                      sizes="auto"
+                      alt={item + index}
+                      className={classes.img}
+                    />
+                  </Box>
+                ))}
             </SimpleGrid>
           </TabPanel>
         </TabPanels>
@@ -147,10 +150,10 @@ const Gallery = ({ photos }) => {
               </div>
               <div className={classes.imageContainer}>
                 <Image
-                  src={photos[selectedCollection][currentIndex]}
+                  src={urlFor(selectedCollection.flat()[currentIndex]).url()}
                   fill={true}
                   style={{ objectFit: "contain" }}
-                  alt={photos[currentIndex]}
+                  alt={selectedCollection.flat()[currentIndex].alt}
                 />
                 <div
                   onClick={() => setOpenImage(false)}
