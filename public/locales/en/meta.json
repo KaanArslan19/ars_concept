@@ -4,27 +4,27 @@
     "content": "Learn about Ars Concept Houses, a tiny house in a tangerine garden"
   },
   "blogDetails": {
-    "b1": {
+    "3a99c64a-018d-41c9-9186-d8ba9df30add": {
       "title": "Değirmendere Waterfall",
       "content": "Değirmendere Waterfall, located within the borders of Değirmendere Village in the Menderes district of Izmir and named after the village, has an environment that can completely take you away from the boring and gray atmosphere of the city, despite being very close to the city center."
     },
-    "b2": {
+    "5ab3f380-2c9c-46f6-9fa3-33d9a57f2afd": {
       "title": "Claros Ancient City",
       "content": "The oracle center of Claros is located 3 kilometers away from Ahmetbeyli beach. It is known as the only Ionian city without a seaside. It became famous as a city of prophecy under the city of Kolophon."
     },
-    "b3": {
+    "0102c543-b70c-49e1-b4f4-759be3bf4857": {
       "title": "Gümüldür Mandarin History",
       "content": "Gümüldür; 50 km away from Izmir, Nusret Şener's path crossed in the late 1940s with the charming town, whose unique coast is covered with pine forests and where the smell of pine and iodine mixes with the smell of tangerine flowers."
     },
-    "b4": {
+    "496e1d2d-94dd-4c23-9b87-97b6528851f3": {
       "title": "Gümüldür Daily Boat Tours",
       "content": "A boat tour will make you feel completely different and will allow you to be in touch with nature. You are guaranteed to have a very pleasant time on boats with 80-100 people."
     },
-    "b5": {
+    "09997d7c-7a71-477f-9e23-398964344aed": {
       "title": "Gümüldür Nature Park",
       "content": "Covering an area of 7.4 hectares, Gümüldür Nature Park has the longest and sandiest beaches in Izmir. In the park, you can ride your bicycle, take long nature walks, stay in a tent or caravan while relaxing with the therapy of blue and green."
     },
-    "b6": {
+    "929fa8d7-9546-410b-bdac-e9862b523eda": {
       "title": "About Gümüldür",
       "content": "Gümüldür is a tourist town in Menderes district, 50 kilometers from Izmir and 35 km from Adnan Menderes Airport. The town, which has remained untouched compared to other holiday resorts in Izmir, is like a mini holiday village with its blue flag beaches, clean bays, history and organic products."
     }
@@ -38,17 +38,13 @@
     "content": "You can see photos of Ars Concept Houses' outdoor landscaping, rooms and common areas, where over 10 species of trees and various vegetables grow."
   },
   "listings": {
-    "th1": {
+    "4ae546db-f25a-43a7-a11a-f03d5147918c": {
       "title": "Our Tiny Houses - Satsuma",
       "content": "It is a 1+1 duplex loft villa of 80 m2 with the largest entrance on the road side. Upstairs bedroom, bathroom and a large balcony; downstairs kitchen, living room and balcony with barbecue; there is a patio in the garden. "
     },
-    "th2": {
+    "456bb994-768a-488a-9a23-f4bd85722294": {
       "title": "Our Tiny Houses - Okitsu",
       "content": "It is a 1 + 1 duplex duplex loft-shaped villa of 80 m2 on the garden side. Upstairs bedroom, bathroom and a large balcony; downstairs kitchen, living room and balcony with barbecue; there is a patio in the garden."
-    },
-    "th3": {
-      "title": "Our Tiny Houses - Fuerte",
-      "content": "It is a 35 m2 loft-shaped triangular house positioned on a 5x6 m iron frame. There is a bedroom upstairs, living room, kitchen and bathroom downstairs. There is a large veranda in front."
     }
   },
   "home": {
