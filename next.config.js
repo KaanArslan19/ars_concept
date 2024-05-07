@@ -23,5 +23,12 @@ module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
+  images: {
+    domains: ["cdn.sanity.io"],
+  },
   i18n,
+  env: {
+    NEXT_PUBLIC_SANITY_PROJECT_ID: process.env.REACT_APP_SANITY_PROJECT_ID,
+    NEXT_PUBLIC_SANITY_TOKEN: process.env.REACT_APP_SANITY_TOKEN,
+  },
 };
