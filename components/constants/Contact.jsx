@@ -42,18 +42,18 @@ const Contact = ({ airbnbId }) => {
               >
                 {translate("contact:mail")}
               </Text>
-              <Text mb="1rem">arsconcepthouses@gmail.com</Text>
+              <Text mb="1rem">filtur2003@hotmail.com</Text>
             </Box>
           </Box>
-
-          <Link
+          {/*           <Link
             href="https://www.airbnb.com.tr/users/show/137500254"
             target="_blank"
-          >
-            <Button width="100%" mt="3rem" leftIcon={<SiAirbnb />}>
-              Air Bnb {translate("contact:airbnb")}
-            </Button>
-          </Link>
+          > */}
+          <Button width="100%" mt="3rem" leftIcon={<SiAirbnb />}>
+            Air Bnb {translate("contact:airbnb")}
+          </Button>
+          {/*           </Link>
+           */}{" "}
         </Flex>
         <Map />
       </Flex>
