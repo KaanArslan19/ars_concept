@@ -1,10 +1,11 @@
 import HouseDetails from "@/components/constants/houses/HouseDetails";
 import React, { Fragment } from "react";
-import fs from "fs/promises";
 import PhotoGallery from "@/components/ui/PhotoGallery";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Head from "next/head";
+import getAllHouseIds from "@/lib/getAllHouseIds";
+import { client } from "@/client";
 
 const HouseDetailPage = (props) => {
   const { t: translate } = useTranslation("meta");
@@ -31,7 +32,7 @@ const HouseDetailPage = (props) => {
       <HouseDetails
         id={props.houseData.id}
         title={props.houseData.title}
-        coverPhoto={props.houseData.coverPhoto}
+        thumbnail={props.houseData.thumbnail}
       />
 
       <PhotoGallery photos={props.houseData.photos} />
@@ -42,20 +43,10 @@ const HouseDetailPage = (props) => {
 export default HouseDetailPage;
 
 export async function getStaticPaths({ locales }) {
-  const filePath = "./data.json";
-  const rawData = await fs.readFile(filePath, "utf8");
-  const data = JSON.parse(rawData);
-  let paths = [];
-  data.forEach((item) => {
-    for (const locale of locales) {
-      paths.push({
-        params: {
-          slug: item.id,
-        },
-        locale,
-      });
-    }
-  });
+  const houseIds = await getAllHouseIds();
+  const paths = houseIds.map((id) => ({
+    params: { slug: id },
+  }));
   return {
     paths,
     fallback: "blocking",
@@ -63,19 +54,22 @@ export async function getStaticPaths({ locales }) {
 }
 
 export async function getStaticProps({ params, locale }) {
-  const houseId = params.slug;
-  const filePath = "./data.json";
-  const rawData = await fs.readFile(filePath, "utf8");
-  const data = JSON.parse(rawData);
-  const filteredHouse = data.find((item) => item.id === houseId);
+  const { slug } = params;
+  const recordQuery = `*[_type == "records" && _id == $slug][0]`;
+  const recordsData = await client.fetch(recordQuery, { slug });
 
+  if (!recordsData) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: {
       houseData: {
-        id: filteredHouse.id,
-        title: filteredHouse.title,
-        coverPhoto: filteredHouse.coverPhoto,
-        photos: filteredHouse.photos,
+        id: recordsData._id,
+        title: recordsData.title,
+        thumbnail: recordsData.thumbnail,
+        photos: recordsData.images,
       },
       ...(await serverSideTranslations(
         locale,

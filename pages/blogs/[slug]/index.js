@@ -1,8 +1,9 @@
 import BlogDetails from "@/components/constants/blogs/BlogDetails";
-import fs from "fs/promises";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Head from "next/head";
+import getAllBlogIds from "@/lib/getAllBlogIds";
+import { client } from "@/client";
 
 const BlogDetailPage = (props) => {
   const { t: translate } = useTranslation("meta");
@@ -40,20 +41,10 @@ const BlogDetailPage = (props) => {
 export default BlogDetailPage;
 
 export async function getStaticPaths({ locales }) {
-  const filePath = "./blog.json";
-  const rawData = await fs.readFile(filePath, "utf8");
-  const data = JSON.parse(rawData);
-  let paths = [];
-  data.forEach((item) => {
-    for (const locale of locales) {
-      paths.push({
-        params: {
-          slug: item.id,
-        },
-        locale,
-      });
-    }
-  });
+  const blogIds = await getAllBlogIds();
+  const paths = blogIds.map((id) => ({
+    params: { slug: id },
+  }));
   return {
     paths,
     fallback: "blocking",
@@ -61,18 +52,16 @@ export async function getStaticPaths({ locales }) {
 }
 
 export async function getStaticProps({ params, locale }) {
-  const blogId = params.slug;
-  const filePath = "./blog.json";
-  const rawData = await fs.readFile(filePath, "utf8");
-  const data = JSON.parse(rawData);
-  const filteredBlog = data.find((item) => item.id === blogId);
+  const { slug } = params;
+  const blogsQuery = `*[_type == "blogs" && _id == $slug][0]`;
+  const blogsData = await client.fetch(blogsQuery, { slug });
 
   return {
     props: {
       blogData: {
-        id: filteredBlog.id,
-        title: filteredBlog.title,
-        imgUrl: filteredBlog.imgUrl,
+        id: blogsData._id,
+        title: blogsData.title,
+        imgUrl: blogsData.thumbnail,
       },
       ...(await serverSideTranslations(locale, ["home", "blog", "meta"], null, [
         "en",
