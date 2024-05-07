@@ -52,6 +52,10 @@ export async function getStaticPaths({ locales }) {
       }))
     );
   }
+  return {
+    paths,
+    fallback: "blocking",
+  };
 }
 
 export async function getStaticProps({ params, locale }) {
