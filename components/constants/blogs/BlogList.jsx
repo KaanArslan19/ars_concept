@@ -17,9 +17,9 @@ const BlogList = ({ blogs }) => {
         <ul className={classes.list}>
           {blogs.map((item) => (
             <BlogItem
-              key={item.id}
-              id={item.id}
-              imgUrl={item.imgUrl}
+              key={item._id}
+              id={item._id}
+              imgUrl={item.thumbnail}
               title={item.title}
               description={item.description}
               date={item.date}

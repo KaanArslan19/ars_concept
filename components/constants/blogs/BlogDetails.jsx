@@ -4,6 +4,7 @@ import Image from "next/image";
 import { CgCalendarDates } from "react-icons/cg";
 import { BiCategory } from "react-icons/bi";
 import { useTranslation } from "next-i18next";
+import { urlFor } from "@/client";
 
 const BlogDetails = ({ id, title, imgUrl }) => {
   const { t: translate } = useTranslation("blog");
@@ -19,7 +20,7 @@ const BlogDetails = ({ id, title, imgUrl }) => {
         {translate(`blog:${id}.title`)}
       </Heading>
       <Image
-        src={imgUrl}
+        src={urlFor(imgUrl).url()}
         fill={true}
         style={{ objectFit: "contain" }}
         className={classes.img}

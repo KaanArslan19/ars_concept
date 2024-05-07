@@ -5,11 +5,12 @@ import { IoSparklesOutline } from "react-icons/io5";
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "next-i18next";
 import useBetterMediaQuery from "@/hooks/useBetterMediaQuery";
+import { urlFor } from "@/client";
 
 const BlogItem = (props) => {
   const { t: translate } = useTranslation("blog");
   const isMobile = useBetterMediaQuery("(max-width: 550px)");
-  const isMidScreen = useBetterMediaQuery("(max-width: 1400px)");
+  const isMidScreen = useBetterMediaQuery("(max-width: 1600px)");
   const [isOverflowing, setIsOverflowing] = useState(false);
   const paragraphRef = useRef(null);
   const maxLines = 2;
@@ -47,7 +48,6 @@ const BlogItem = (props) => {
               {translate(`blog:${props.id}.description`)}
             </p>
           )}
-
           <div className={classes.rowContainer}>
             <div className={classes.innerContent}>
               <span>{translate(`blog:${props.id}.date`)}</span>
@@ -61,7 +61,7 @@ const BlogItem = (props) => {
         </div>
         <div className={classes.imgBox}>
           <Image
-            src={props.imgUrl}
+            src={urlFor(props.imgUrl).url()}
             alt={props.title}
             fill={true}
             style={{ objectFit: "contain" }}
