@@ -28,7 +28,7 @@ module.exports = {
   },
   i18n,
   env: {
-    NEXT_PUBLIC_SANITY_PROJECT_ID: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-    NEXT_PUBLIC_SANITY_TOKEN: process.env.NEXT_PUBLIC_SANITY_TOKEN,
+    NEXT_SANITY_PROJECT_ID: process.env.NEXT_SANITY_PROJECT_ID,
+    NEXT_SANITY_TOKEN: process.env.NEXT_SANITY_TOKEN,
   },
 };
