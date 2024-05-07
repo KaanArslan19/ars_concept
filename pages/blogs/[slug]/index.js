@@ -42,13 +42,16 @@ export default BlogDetailPage;
 
 export async function getStaticPaths({ locales }) {
   const blogIds = await getAllBlogIds();
-  const paths = blogIds.map((id) => ({
-    params: { slug: id },
-  }));
-  return {
-    paths,
-    fallback: "blocking",
-  };
+  const paths = [];
+
+  for (const locale of locales) {
+    paths.push(
+      ...blogIds.map((id) => ({
+        params: { slug: id },
+        locale,
+      }))
+    );
+  }
 }
 
 export async function getStaticProps({ params, locale }) {

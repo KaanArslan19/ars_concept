@@ -19,7 +19,7 @@ const HouseDetailPage = (props) => {
         <meta property="og:image:alt" content={translate("meta:home.title")} />
         <link
           rel="canonical"
-          href={`https://www.arsconcepthouses.com/blogs/${props.houseData.id}`}
+          href={`https://www.arsconcepthouses.com/listings/${props.houseData.id}`}
         />
         <title>{translate(`meta:listings.${props.houseData.id}.title`)}</title>
         <meta
@@ -44,9 +44,17 @@ export default HouseDetailPage;
 
 export async function getStaticPaths({ locales }) {
   const houseIds = await getAllHouseIds();
-  const paths = houseIds.map((id) => ({
-    params: { slug: id },
-  }));
+  const paths = [];
+
+  for (const locale of locales) {
+    paths.push(
+      ...houseIds.map((id) => ({
+        params: { slug: id },
+        locale,
+      }))
+    );
+  }
+
   return {
     paths,
     fallback: "blocking",

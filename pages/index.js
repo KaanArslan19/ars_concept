@@ -6,7 +6,6 @@ import { client } from "@/client";
 
 export default function HomePage({ listings, blogs }) {
   const { t: translate } = useTranslation("meta");
-
   return (
     <>
       <Head>
