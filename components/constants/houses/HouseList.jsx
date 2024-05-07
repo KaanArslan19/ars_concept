@@ -16,9 +16,9 @@ const HouseList = ({ listings }) => {
         <ul className={classes.list}>
           {listings.map((item) => (
             <HouseItem
-              key={item.id}
-              id={item.id}
-              coverPhoto={item.coverPhoto}
+              key={item._id}
+              id={item._id}
+              thumbnail={item.thumbnail}
               title={item.title}
             />
           ))}

@@ -3,9 +3,10 @@ import classes from "./PhotoGallery.module.scss";
 import Link from "next/link";
 import { useState } from "react";
 
-import { BiChevronLeft, BiChevronRight, BiWindowClose } from "react-icons/bi";
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 import useBetterMediaQuery from "@/hooks/useBetterMediaQuery";
+import { urlFor } from "@/client";
 const PhotoGallery = ({ photos }) => {
   const [openImage, setOpenImage] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -24,6 +25,7 @@ const PhotoGallery = ({ photos }) => {
     setOpenImage(true);
     setCurrentIndex(index);
   };
+  console.log(photos);
   return (
     <div className={classes.container}>
       {photos.length !== 0 && (
@@ -35,7 +37,7 @@ const PhotoGallery = ({ photos }) => {
                 <button onClick={() => imageClickHandler(index)}>
                   <li className={classes.imgBox}>
                     <Image
-                      src={item}
+                      src={urlFor(item).url()}
                       fill={true}
                       sizes="auto"
                       style={{ objectFit: "contain" }}
@@ -52,7 +54,7 @@ const PhotoGallery = ({ photos }) => {
                         </div>
                         <div className={classes.imageContainer}>
                           <Image
-                            src={photos[currentIndex]}
+                            src={urlFor(photos[currentIndex]).url()}
                             fill={true}
                             style={{ objectFit: "contain" }}
                             alt={photos[currentIndex]}

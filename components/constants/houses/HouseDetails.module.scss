@@ -24,8 +24,8 @@
 .imgBox {
   display: flex;
   justify-content: center;
-  max-width: 1200px;
-  height: 600px;
+  max-width: 1600px;
+  height: 800px;
   padding: 2rem;
 
   img {
@@ -34,7 +34,12 @@
     border-bottom-left-radius: 15px;
   }
 }
-
+@include mobile {
+  .imgBox {
+    height: 400px;
+    padding: 1rem;
+  }
+}
 .icon {
   font-size: 1.5rem;
   color: var(--color-primary-light);

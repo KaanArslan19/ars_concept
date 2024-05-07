@@ -4,8 +4,9 @@ import { BiCoffee, BiWifi } from "react-icons/bi";
 import { FaBed } from "react-icons/fa";
 import { GiCctvCamera } from "react-icons/gi";
 import { useTranslation } from "next-i18next";
+import { urlFor } from "@/client";
 
-const HouseDetails = ({ id, title, coverPhoto }) => {
+const HouseDetails = ({ id, title, thumbnail }) => {
   const { t: translate } = useTranslation("house");
 
   return (
@@ -15,17 +16,17 @@ const HouseDetails = ({ id, title, coverPhoto }) => {
 
         <div className={classes.imgBox}>
           <Image
-            src={coverPhoto}
+            src={urlFor(thumbnail).url()}
             fill={true}
             style={{ objectFit: "contain" }}
-            alt={`coverPhoto-${title}`}
+            alt={`thumbnail-${title}`}
           />
         </div>
       </div>
 
       <div>
         <h3>{translate("house:header_description")}</h3>
-        <p>{translate(`house:${id}.description`)}</p>
+        <p>{translate(`house:${title}.description`)}</p>
       </div>
       <div className={classes.contentOverview}>
         <h3>{translate("house:header_overview")}</h3>

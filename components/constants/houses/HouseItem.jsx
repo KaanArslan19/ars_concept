@@ -3,16 +3,16 @@ import classes from "./HouseItem.module.scss";
 import Image from "next/image";
 import { BiArea, BiHome, BiMoney } from "react-icons/bi";
 import { useTranslation } from "next-i18next";
+import { urlFor } from "@/client";
 
 const HouseItem = (props) => {
   const { t: translate } = useTranslation(["home", "house"]);
-
   return (
     <Link href={`/listings/${props.id}`}>
       <li className={classes.container}>
         <div className={classes.imgBox}>
           <Image
-            src={props.coverPhoto}
+            src={urlFor(props.thumbnail).url()}
             alt={props.title}
             fill="true"
             style={{ objectFit: "cover" }}
@@ -24,13 +24,13 @@ const HouseItem = (props) => {
           <div className={classes.rowContainer}>
             <BiHome className={classes.icon} />
             <span>{translate("home:house_list.type")}</span>:{" "}
-            {translate(`house:${props.id}.type`)}
+            {translate(`house:${props.title}.type`)}
           </div>
 
           <div className={classes.rowContainer}>
             <BiArea className={classes.icon} />
             <span>{translate("home:house_list.totalArea")} </span>:{" "}
-            {translate(`house:${props.id}.totalArea`)} m2
+            {translate(`house:${props.title}.totalArea`)} m2
           </div>
           <div className={classes.rowContainer}>
             <BiMoney className={classes.icon} />
