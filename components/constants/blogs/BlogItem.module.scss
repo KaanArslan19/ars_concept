@@ -63,14 +63,19 @@
 @include mobile {
   .content {
     max-width: 40%;
-    margin-right: 2rem;
+    margin-right: 3rem;
     p,
     span {
       font-size: 80%;
     }
+
     h2,
     .icon {
-      font-size: 16px;
+      font-size: 14px;
+      white-space: nowrap;
     }
+  }
+  .imgBox {
+    padding: 0 2rem;
   }
 }

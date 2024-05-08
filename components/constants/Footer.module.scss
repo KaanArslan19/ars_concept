@@ -1,11 +1,23 @@
 @import "../../styles/mixins";
 .container {
-  padding: 1rem 2rem 0;
+  padding: 1rem 1rem 0;
   display: flex;
   justify-content: space-between;
   background-color: var(--color-secondary-logo);
   color: var(--color-primary-light);
   margin-top: 2rem;
+}
+@include mobile {
+  .container {
+    flex-direction: column;
+  }
+  .columnContainer {
+    margin-bottom: 1.5rem;
+  }
+  .firstCol {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .columnContainer {
   p {
@@ -14,13 +26,13 @@
   h3 {
     margin-bottom: 0.5rem;
     font-weight: 600;
+    font-size: 20px;
   }
 }
-.columnContainer:first-child {
-  margin-right: 4rem;
-}
+
 .columnContainer {
   margin-right: 0.5rem;
+  flex: 1;
 }
 .rowContainer {
   display: flex;
@@ -39,10 +51,10 @@
 @include mobile {
   .columnContainer {
     p {
-      font-size: 70%;
+      font-size: 12px;
     }
     h3 {
-      font-size: 90%;
+      font-size: 16px;
     }
   }
   .rowContainer {

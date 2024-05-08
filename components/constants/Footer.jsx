@@ -10,20 +10,22 @@ const Footer = () => {
 
   return (
     <div className={classes.container}>
-      <div className={classes.columnContainer}>
+      <div className={`${classes.columnContainer} + ${classes.firstCol}`}>
         <h3>Ars Concept Houses</h3>
-        <Link
-          href="https://www.instagram.com/arsconcepthouses/"
-          target="_blank"
-        >
-          <BiLogoInstagram className={classes.icon} />
-        </Link>
-        <Link
-          href="https://www.instagram.com/arsconcepthouses/"
-          target="_blank"
-        >
-          <BiLogoFacebookSquare className={classes.icon} />
-        </Link>
+        <div>
+          <Link
+            href="https://www.instagram.com/arsconcepthouses/"
+            target="_blank"
+          >
+            <BiLogoInstagram className={classes.icon} />
+          </Link>
+          <Link
+            href="https://www.instagram.com/arsconcepthouses/"
+            target="_blank"
+          >
+            <BiLogoFacebookSquare className={classes.icon} />
+          </Link>
+        </div>
       </div>
       <div className={classes.columnContainer}>
         <h3>{translate("home:footer.header")}</h3>
