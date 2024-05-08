@@ -19,7 +19,7 @@ const Layout = (props) => {
           </Link>
         </div>
       </>
-      <footer>
+      <footer className="w-full ">
         <Footer />
       </footer>
     </div>

@@ -12,9 +12,11 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import { urlFor } from "@/client";
+import { useState } from "react";
 
 const Slider = ({ listings }) => {
   SwiperCore.use([Autoplay, Navigation, Pagination]);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const router = useRouter();
   const { t: translate } = useTranslation("home");
   const mappedData = listings.map((item) => {

@@ -12,7 +12,9 @@ const BlogList = ({ blogs }) => {
       <div className={classes.listContainer}>
         <div className={classes.content}>
           <Heading as="h3">{translate("home:blog_list.header")}</Heading>
-          <span>{translate("home:blog_list.description")}</span>
+          <span className="text-center ">
+            {translate("home:blog_list.description")}
+          </span>
         </div>
         <ul className={classes.list}>
           {blogs.map((item) => (
