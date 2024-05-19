@@ -33,6 +33,7 @@ const HouseDetailPage = (props) => {
         id={props.houseData.id}
         title={props.houseData.title}
         thumbnail={props.houseData.thumbnail}
+        lazyThumbnail={props.houseData.lazyThumbnail}
       />
 
       <PhotoGallery photos={props.houseData.photos} />
@@ -78,6 +79,7 @@ export async function getStaticProps({ params, locale }) {
         title: recordsData.title,
         thumbnail: recordsData.thumbnail,
         photos: recordsData.images,
+        lazyThumbnail: recordsData.lazyThumbnail,
       },
       ...(await serverSideTranslations(
         locale,

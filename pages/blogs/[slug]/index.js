@@ -32,7 +32,8 @@ const BlogDetailPage = (props) => {
       <BlogDetails
         id={props.blogData.id}
         title={props.blogData.title}
-        imgUrl={props.blogData.imgUrl}
+        thumbnail={props.blogData.thumbnail}
+        lazyThumbnail={props.blogData.lazyThumbnail}
       />
     </div>
   );
@@ -68,7 +69,8 @@ export async function getStaticProps({ params, locale }) {
       blogData: {
         id: blogsData._id,
         title: blogsData.title,
-        imgUrl: blogsData.thumbnail,
+        thumbnail: blogsData.thumbnail,
+        lazyThumbnail: blogsData.lazyThumbnail,
       },
       ...(await serverSideTranslations(locale, ["home", "blog", "meta"], null, [
         "en",

@@ -5,9 +5,11 @@ import { FaBed } from "react-icons/fa";
 import { GiCctvCamera } from "react-icons/gi";
 import { useTranslation } from "next-i18next";
 import { urlFor } from "@/client";
+import { useState } from "react";
 
-const HouseDetails = ({ id, title, thumbnail }) => {
+const HouseDetails = ({ id, title, thumbnail, lazyThumbnail }) => {
   const { t: translate } = useTranslation("house");
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <div className={classes.container}>
@@ -16,7 +18,10 @@ const HouseDetails = ({ id, title, thumbnail }) => {
 
         <div className={classes.imgBox}>
           <Image
-            src={urlFor(thumbnail).url()}
+            src={
+              !isLoaded ? urlFor(lazyThumbnail).url() : urlFor(thumbnail).url()
+            }
+            onLoad={() => setIsLoaded(true)}
             fill={true}
             style={{ objectFit: "contain" }}
             alt={`thumbnail-${title}`}

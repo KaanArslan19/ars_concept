@@ -19,6 +19,7 @@ const HouseList = ({ listings }) => {
               key={item._id}
               id={item._id}
               thumbnail={item.thumbnail}
+              lazyThumbnail={item.lazyThumbnail}
               title={item.title}
             />
           ))}

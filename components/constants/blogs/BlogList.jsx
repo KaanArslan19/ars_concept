@@ -21,7 +21,8 @@ const BlogList = ({ blogs }) => {
             <BlogItem
               key={item._id}
               id={item._id}
-              imgUrl={item.thumbnail}
+              thumbnail={item.thumbnail}
+              lazyThumbnail={item.lazyThumbnail}
               title={item.title}
               description={item.description}
               date={item.date}

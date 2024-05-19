@@ -12,6 +12,8 @@ const BlogItem = (props) => {
   const isMobile = useBetterMediaQuery("(max-width: 550px)");
   const isMidScreen = useBetterMediaQuery("(max-width: 1600px)");
   const [isOverflowing, setIsOverflowing] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
   const paragraphRef = useRef(null);
   const maxLines = 2;
 
@@ -61,7 +63,12 @@ const BlogItem = (props) => {
         </div>
         <div className={classes.imgBox}>
           <Image
-            src={urlFor(props.imgUrl).url()}
+            src={
+              !isLoaded
+                ? urlFor(props.lazyThumbnail).url()
+                : urlFor(props.thumbnail).url()
+            }
+            onLoad={() => setIsLoaded(true)}
             alt={props.title}
             fill={true}
             style={{ objectFit: "contain" }}

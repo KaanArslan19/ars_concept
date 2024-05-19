@@ -4,18 +4,26 @@ import Image from "next/image";
 import { BiArea, BiHome, BiMoney } from "react-icons/bi";
 import { useTranslation } from "next-i18next";
 import { urlFor } from "@/client";
+import { useState } from "react";
 
 const HouseItem = (props) => {
   const { t: translate } = useTranslation(["home", "house"]);
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <Link href={`/listings/${props.id}`}>
       <li className={classes.container}>
         <div className={classes.imgBox}>
           <Image
-            src={urlFor(props.thumbnail).url()}
+            src={
+              !isLoaded
+                ? urlFor(props.lazyThumbnail).url()
+                : urlFor(props.thumbnail).url()
+            }
             alt={props.title}
             fill="true"
             style={{ objectFit: "cover" }}
+            onLoad={() => setIsLoaded(true)}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>

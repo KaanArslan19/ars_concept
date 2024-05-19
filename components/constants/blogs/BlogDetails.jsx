@@ -5,9 +5,11 @@ import { CgCalendarDates } from "react-icons/cg";
 import { BiCategory } from "react-icons/bi";
 import { useTranslation } from "next-i18next";
 import { urlFor } from "@/client";
+import { useState } from "react";
 
-const BlogDetails = ({ id, title, imgUrl }) => {
+const BlogDetails = ({ id, title, thumbnail, lazyThumbnail }) => {
   const { t: translate } = useTranslation("blog");
+  const [isLoaded, setIsLoaded] = useState(false);
 
   function splitStringAtNewlines(inputString) {
     const parts = inputString.split("\n");
@@ -20,7 +22,8 @@ const BlogDetails = ({ id, title, imgUrl }) => {
         {translate(`blog:${id}.title`)}
       </Heading>
       <Image
-        src={urlFor(imgUrl).url()}
+        src={!isLoaded ? urlFor(lazyThumbnail).url() : urlFor(thumbnail).url()}
+        onLoad={() => setIsLoaded(true)}
         fill={true}
         style={{ objectFit: "contain" }}
         className={classes.img}

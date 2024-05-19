@@ -16,7 +16,7 @@ import { useState } from "react";
 
 const Slider = ({ listings }) => {
   SwiperCore.use([Autoplay, Navigation, Pagination]);
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   const router = useRouter();
   const { t: translate } = useTranslation("home");
   const mappedData = listings.map((item) => {
@@ -24,6 +24,7 @@ const Slider = ({ listings }) => {
       id: item._id,
       title: item.title,
       thumbnail: item.thumbnail,
+      lazyThumbnail: item.lazyThumbnail,
     };
   });
 
@@ -44,10 +45,15 @@ const Slider = ({ listings }) => {
           >
             <div className={classes.imgContainer}>
               <Image
-                src={urlFor(item.thumbnail).url()}
+                src={
+                  !isLoaded
+                    ? urlFor(item.lazyThumbnail).url()
+                    : urlFor(item.thumbnail).url()
+                }
                 alt={item.title}
                 fill="true"
                 style={{ objectFit: "cover" }}
+                onLoad={() => setIsLoaded(true)}
                 onClick={() => router.push(`listings/${item.id}`)}
               />
             </div>
