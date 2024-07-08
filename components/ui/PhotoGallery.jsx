@@ -25,7 +25,6 @@ const PhotoGallery = ({ photos }) => {
     setOpenImage(true);
     setCurrentIndex(index);
   };
-  console.log(photos);
   return (
     <div className={classes.container}>
       {photos.length !== 0 && (
