@@ -57,14 +57,14 @@ const HamburgerMenu = ({ navbarItems }) => {
             ))}
             <div className={classes.imageContainer}>
               <Image
-                src="/images/turkey_flag.png"
+                src="/images/turkey_flag.webp"
                 width={24}
                 height={24}
                 alt="turkey_flag"
                 onClick={handleLangClick("tr")}
               />
               <Image
-                src="/images/great_britain_flag.png"
+                src="/images/great_britain_flag.webp"
                 width={24}
                 height={24}
                 alt="great_britain_flag"

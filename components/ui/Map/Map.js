@@ -7,7 +7,7 @@ import { FaDirections } from "react-icons/fa";
 import { useTranslation } from "next-i18next";
 
 const ICON = icon({
-  iconUrl: "/images/hotel-marker-icon.png",
+  iconUrl: "/images/hotel-marker-icon.webp",
   iconSize: [30, 40],
 });
 const Map = () => {
