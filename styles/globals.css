@@ -17,10 +17,74 @@
   --color-gray: #b4b8bf;
 }
 
+:root {
+  /* Fluid type scale: min @ 375px -> max @ 1440px */
+  --fs-xs: clamp(0.75rem, 0.72rem + 0.12vw, 0.8125rem);
+  --fs-sm: clamp(0.875rem, 0.85rem + 0.12vw, 0.9375rem);
+  --fs-base: clamp(0.9375rem, 0.9rem + 0.18vw, 1.0625rem);
+  --fs-lg: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --fs-xl: clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem);
+  --fs-2xl: clamp(1.5rem, 1.25rem + 1vw, 2.25rem);
+  --fs-3xl: clamp(2rem, 1.5rem + 2vw, 3.25rem);
+
+  --color-text: #222;
+  --color-muted: #6a6a6a;
+  --radius: 12px;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  --container: 1200px;
+}
+
+body {
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-white);
+}
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  font-weight: 600;
+}
+h1 {
+  font-size: var(--fs-3xl);
+}
+h2 {
+  font-size: var(--fs-2xl);
+}
+h3 {
+  font-size: var(--fs-xl);
+}
+
+/* Shared section layout */
+.section {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 3rem 1rem 0;
+}
+.section-header {
+  margin-bottom: 1.5rem;
+}
+.section-header h2 {
+  font-size: var(--fs-2xl);
+  color: var(--color-secondary-logo);
+  margin-bottom: 0.35rem;
+}
+.section-header p {
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+  max-width: 60ch;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  overflow-x: clip; /* unlike hidden, keeps position: sticky working */
   min-height: 100vh;
 }
 ul,
@@ -51,14 +115,17 @@ svg {
   border: none;
 }
 
-.swiper-button-next:after,
-.swiper-button-prev:after {
-  color: var(--color-primary);
+/* Blurred low-res placeholder behind next/image (set --blur inline) */
+.img-blur {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-primary-light);
 }
-
-.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-  background: var(--color-primary) !important;
-}
-.swiper-slide-prev {
-  opacity: 0 !important;
+.img-blur::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--blur) center / cover no-repeat;
+  filter: blur(12px);
+  transform: scale(1.1);
 }
