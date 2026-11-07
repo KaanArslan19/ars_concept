@@ -24,7 +24,8 @@ export default function HomePage({ listings, blogs, galleryPreview }) {
   );
 }
 export async function getStaticProps({ locale }) {
-  const listingsQuery = '*[_type == "records"]';
+  const listingsQuery =
+    '*[_type == "records"] | order((title == "Satsuma") desc, title asc)';
   const blogsQuery = '*[_type == "blogs"]';
   // Rooms + events only: the hero already shows the house exteriors.
   const galleryQuery =
