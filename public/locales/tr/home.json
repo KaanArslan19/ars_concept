@@ -5,9 +5,14 @@
     "gallery": "Galeri",
     "contact": "İletişim"
   },
-
   "slider": {
     "slogan": "Gümüldür'deki Eviniz"
+  },
+  "hero": {
+    "title": "Mandalina bahçeleri arasında huzurlu konaklama",
+    "subtitle": "Gümüldür'de denize beş dakika, 12 ay hizmetinizde.",
+    "cta_houses": "Evleri incele",
+    "cta_contact": "İletişime geç"
   },
   "house_list": {
     "header": "Evlerimiz",

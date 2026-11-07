@@ -4,12 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 
 import HamburgerMenu from "../ui/HamburgerMenu";
-import { useRouter } from "next/router";
+import LanguageSwitcher from "../ui/LanguageSwitcher";
 import { useTranslation } from "next-i18next";
 import useBetterMediaQuery from "@/hooks/useBetterMediaQuery";
 
 const Navbar = () => {
-  const { push } = useRouter();
   const { t: translate } = useTranslation("home");
   const navbarItems = [
     { title: "home", url: "/" },
@@ -18,9 +17,6 @@ const Navbar = () => {
     { title: "contact", url: "/contact" },
   ];
 
-  const handleLangClick = (l) => () => {
-    push("/", undefined, { locale: l });
-  };
   const isMobile = useBetterMediaQuery("(max-width: 768px)");
   return (
     <nav className={classes.container}>
@@ -47,22 +43,7 @@ const Navbar = () => {
             ))}
           </ul>
 
-          <div className={classes.imageContainer}>
-            <Image
-              src="/images/turkey_flag.webp"
-              width={24}
-              height={24}
-              alt="turkey_flag"
-              onClick={handleLangClick("tr")}
-            />
-            <Image
-              src="/images/great_britain_flag.webp"
-              width={24}
-              height={24}
-              alt="great_britain_flag"
-              onClick={handleLangClick("en")}
-            />
-          </div>
+          <LanguageSwitcher />
         </div>
       ) : (
         <HamburgerMenu navbarItems={navbarItems} />

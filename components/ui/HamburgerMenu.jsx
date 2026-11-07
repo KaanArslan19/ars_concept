@@ -5,17 +5,12 @@ import { AiOutlineClose } from "react-icons/ai";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
-import { useRouter } from "next/router";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const HamburgerMenu = ({ navbarItems }) => {
-  const { push } = useRouter();
   const { t: translate } = useTranslation("home");
 
   const [toggle, setToggle] = useState(false);
-  const handleLangClick = (l) => () => {
-    push("/", undefined, { locale: l });
-    setToggle(false);
-  };
   return (
     <div className={classes.container}>
       {!toggle ? (
@@ -55,22 +50,7 @@ const HamburgerMenu = ({ navbarItems }) => {
                 </Link>
               </li>
             ))}
-            <div className={classes.imageContainer}>
-              <Image
-                src="/images/turkey_flag.webp"
-                width={24}
-                height={24}
-                alt="turkey_flag"
-                onClick={handleLangClick("tr")}
-              />
-              <Image
-                src="/images/great_britain_flag.webp"
-                width={24}
-                height={24}
-                alt="great_britain_flag"
-                onClick={handleLangClick("en")}
-              />
-            </div>
+            <LanguageSwitcher onChange={() => setToggle(false)} />
           </ul>
         </div>
       )}

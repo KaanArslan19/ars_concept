@@ -1,54 +1,49 @@
 import Link from "next/link";
 import classes from "./HouseItem.module.scss";
 import Image from "next/image";
-import { BiArea, BiHome, BiMoney } from "react-icons/bi";
+import { BiArea, BiHome } from "react-icons/bi";
 import { useTranslation } from "next-i18next";
-import { urlFor } from "@/client";
-import { useState } from "react";
+import { imageUrl } from "@/client";
 
 const HouseItem = (props) => {
   const { t: translate } = useTranslation(["home", "house"]);
-  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <Link href={`/listings/${props.id}`}>
-      <li className={classes.container}>
-        <div className={classes.imgBox}>
+    <li>
+      <Link href={`/listings/${props.id}`} className={classes.container}>
+        <div
+          className={`${classes.imgBox} img-blur`}
+          style={{ "--blur": `url(${imageUrl(props.lazyThumbnail, 24)})` }}
+        >
           <Image
-            src={
-              !isLoaded
-                ? urlFor(props.lazyThumbnail).url()
-                : urlFor(props.thumbnail).url()
-            }
+            src={imageUrl(props.thumbnail, 800)}
             alt={props.title}
-            fill="true"
+            fill
             style={{ objectFit: "cover" }}
-            onLoad={() => setIsLoaded(true)}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 400px"
           />
         </div>
 
         <div className={classes.content}>
-          <h5>{props.title}</h5>
-          <div className={classes.rowContainer}>
-            <BiHome className={classes.icon} />
-            <span>{translate("home:house_list.type")}</span>:{" "}
-            {translate(`house:${props.title}.type`)}
+          <h3>{props.title}</h3>
+          <div className={classes.meta}>
+            <span>
+              <BiHome className={classes.icon} />
+              {translate(`house:${props.title}.type`)}
+            </span>
+            <span className={classes.dot}>·</span>
+            <span>
+              <BiArea className={classes.icon} />
+              {translate(`house:${props.title}.totalArea`)} m²
+            </span>
           </div>
-
-          <div className={classes.rowContainer}>
-            <BiArea className={classes.icon} />
-            <span>{translate("home:house_list.totalArea")} </span>:{" "}
-            {translate(`house:${props.title}.totalArea`)} m2
-          </div>
-          <div className={classes.rowContainer}>
-            <BiMoney className={classes.icon} />
-            <span>{translate("home:house_list.price")} </span>:{" "}
-            {translate(`home:house_list.priceDescription`)}
+          <div className={classes.price}>
+            {translate("home:house_list.price")}:{" "}
+            <strong>{translate("home:house_list.priceDescription")}</strong>
           </div>
         </div>
-      </li>
-    </Link>
+      </Link>
+    </li>
   );
 };
 

@@ -1,18 +1,27 @@
 {
   "header_description": "Oda Açıklama",
   "header_overview": "Oda Genel Bakış",
+  "show_all_photos": "{{count}} fotoğrafın tümünü göster",
+  "book_now": "Rezervasyon yap",
+  "whatsapp": "WhatsApp'tan yaz",
+  "call_us": "Bizi arayın",
+  "booking_note": "Müsaitlik ve fiyatlar için bizimle iletişime geçin.",
+  "amenities": {
+    "bed": "Çift kişilik yatak",
+    "security": "Güvenlik kamerası",
+    "wifi": "Wi-Fi",
+    "coffee": "Kahve makinesi"
+  },
   "Satsuma": {
     "type": "Loft",
     "description": "Yol tarafında, en geniş girişe sahip 80 m2  büyüklüğünde 1+1 dubleks loft şeklinde bir villadır. Üst katta yatak odası, banyo ve geniş bir balkon; alt katta mutfak, salon ve barbekülü  balkon; bahçesinde verandası mevcuttur. Villa tamamen dayalı döşeli 4 kişilik kapasiteye sahiptir.",
     "totalArea": "80"
   },
-
   "Okitsu": {
     "type": "Loft",
     "description": "Bahçe tarafında  80 m2 büyüklüğünde 1+1 dubleks loft şeklinde bir villadır. Üst katta yatak odası, banyo ve geniş bir balkon; alt katta mutfak, salon ve barbekülü  balkon; bahçesinde verandası mevcuttur. Villa tamamen dayalı döşeli 4 kişilik kapasiteye sahiptir.",
     "totalArea": "80"
   },
-
   "Fuerte": {
     "type": "Üçgen",
     "description": "5x6 m lik demir iskelet üzerine konumlandirilmis 35 m2 loft şeklinde üçgen evdir. Üst katta yatak odası, alt katta salon, mutfak ve banyosu bulunmaktadır. Ön tarafında geniş verandası mevcuttur. Üçgen evimiz çok yakında tamamlanıp müşterilerimizin hizmetine açılacaktır.",

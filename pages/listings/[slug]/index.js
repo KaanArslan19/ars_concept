@@ -1,6 +1,5 @@
 import HouseDetails from "@/components/constants/houses/HouseDetails";
 import React, { Fragment } from "react";
-import PhotoGallery from "@/components/ui/PhotoGallery";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Head from "next/head";
@@ -30,13 +29,9 @@ const HouseDetailPage = (props) => {
         <link rel="icon" href="/favicon_ars.ico" />
       </Head>
       <HouseDetails
-        id={props.houseData.id}
         title={props.houseData.title}
-        thumbnail={props.houseData.thumbnail}
-        lazyThumbnail={props.houseData.lazyThumbnail}
+        photos={props.houseData.photos}
       />
-
-      <PhotoGallery photos={props.houseData.photos} />
     </Fragment>
   );
 };
@@ -77,9 +72,7 @@ export async function getStaticProps({ params, locale }) {
       houseData: {
         id: recordsData._id,
         title: recordsData.title,
-        thumbnail: recordsData.thumbnail,
-        photos: recordsData.images,
-        lazyThumbnail: recordsData.lazyThumbnail,
+        photos: recordsData.images || [],
       },
       ...(await serverSideTranslations(
         locale,

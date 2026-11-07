@@ -2,7 +2,7 @@
 
 .container {
   @include flexCenter();
-  padding: 2rem;
+  padding: 1rem 2rem;
   background: var(--color-cream);
 }
 
@@ -10,23 +10,18 @@
   display: flex;
 
   li {
-    padding-right: 1rem;
+    padding-right: 1.5rem;
+    font-size: var(--fs-sm);
+    font-weight: 500;
     color: var(--color-primary-logo);
+  }
+  a:hover {
+    color: var(--color-secondary-logo);
   }
 }
 
 .content {
   @include flexCenter();
-}
-
-.imageContainer {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  img {
-    margin-left: 0.8rem;
-    cursor: pointer;
-  }
 }
 
 .logo {

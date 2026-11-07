@@ -1,66 +1,47 @@
-import { Button, Container, Flex, Heading, Text } from "@chakra-ui/react";
 import classes from "./BlogDetails.module.scss";
 import Image from "next/image";
 import { CgCalendarDates } from "react-icons/cg";
-import { BiCategory } from "react-icons/bi";
 import { useTranslation } from "next-i18next";
-import { urlFor } from "@/client";
-import { useState } from "react";
+import { imageUrl } from "@/client";
 
 const BlogDetails = ({ id, title, thumbnail, lazyThumbnail }) => {
   const { t: translate } = useTranslation("blog");
-  const [isLoaded, setIsLoaded] = useState(false);
+  const paragraphs = translate(`blog:${id}.description`)
+    .split("\n")
+    .filter((p) => p.trim());
 
-  function splitStringAtNewlines(inputString) {
-    const parts = inputString.split("\n");
-    return parts;
-  }
-  const descText = splitStringAtNewlines(translate(`blog:${id}.description`));
   return (
-    <Container centerContent mt={"2rem"} maxW={{ base: "768px", xl: "992px" }}>
-      <Heading as="h1" mb={"1rem"}>
-        {translate(`blog:${id}.title`)}
-      </Heading>
-      <Image
-        src={!isLoaded ? urlFor(lazyThumbnail).url() : urlFor(thumbnail).url()}
-        onLoad={() => setIsLoaded(true)}
-        fill={true}
-        style={{ objectFit: "contain" }}
-        className={classes.img}
-        alt={title}
-      />
-      <Flex
-        w="100%"
-        justify="space-around"
-        mt="0.5rem"
-        pb="0.2rem"
-        borderBottom="2px solid var(--color-primary-light)"
-      >
-        <Button
-          cursor="default"
-          variant="ghost"
-          leftIcon={<CgCalendarDates />}
-          mr="4rem"
-        >
-          {translate(`blog:${id}.date`)}
-        </Button>
-        <Button
-          cursor="default"
-          variant="ghost"
-          leftIcon={<BiCategory />}
-          ml="4rem"
-          textTransform="capitalize"
-        >
-          {translate(`blog:${id}.type`)}
-        </Button>
-      </Flex>
+    <article className={classes.page}>
+      <header className={classes.header}>
+        <div className={classes.meta}>
+          <span className={classes.type}>{translate(`blog:${id}.type`)}</span>
+          <span className={classes.date}>
+            <CgCalendarDates /> {translate(`blog:${id}.date`)}
+          </span>
+        </div>
+        <h1>{translate(`blog:${id}.title`)}</h1>
+      </header>
 
-      {descText.map((item, index) => (
-        <Text mt={"1rem"} mb={"1rem"} id="desc-text" key={item + index}>
-          {item}
-        </Text>
-      ))}
-    </Container>
+      <div
+        className={`${classes.cover} img-blur`}
+        style={{ "--blur": `url(${imageUrl(lazyThumbnail, 24)})` }}
+      >
+        <Image
+          src={imageUrl(thumbnail, 1600)}
+          alt={title}
+          fill
+          priority
+          sizes="(max-width: 1000px) 100vw, 960px"
+          style={{ objectFit: "cover" }}
+        />
+      </div>
+
+      <div className={classes.content}>
+        {paragraphs.map((item, index) => (
+          <p key={index}>{item}</p>
+        ))}
+      </div>
+    </article>
   );
 };
 

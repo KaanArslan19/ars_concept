@@ -1,63 +1,90 @@
-import Image from "next/image";
+import Link from "next/link";
 import classes from "./HouseDetails.module.scss";
-import { BiCoffee, BiWifi } from "react-icons/bi";
+import { BiArea, BiCoffee, BiHome, BiPhone, BiWifi } from "react-icons/bi";
 import { FaBed } from "react-icons/fa";
 import { GiCctvCamera } from "react-icons/gi";
+import { IoLogoWhatsapp } from "react-icons/io";
 import { useTranslation } from "next-i18next";
-import { urlFor } from "@/client";
-import { useState } from "react";
+import PhotoGrid from "@/components/ui/PhotoGrid";
 
-const HouseDetails = ({ id, title, thumbnail, lazyThumbnail }) => {
-  const { t: translate } = useTranslation("house");
-  const [isLoaded, setIsLoaded] = useState(false);
+const amenities = [
+  { key: "bed", Icon: FaBed },
+  { key: "security", Icon: GiCctvCamera },
+  { key: "wifi", Icon: BiWifi },
+  { key: "coffee", Icon: BiCoffee },
+];
+
+const HouseDetails = ({ title, photos = [] }) => {
+  const { t: translate } = useTranslation(["house", "home"]);
 
   return (
-    <div className={classes.container}>
-      <div className={classes.header}>
+    <article className={classes.page}>
+      <header className={classes.header}>
         <h1>{title}</h1>
-
-        <div className={classes.imgBox}>
-          <Image
-            src={
-              !isLoaded ? urlFor(lazyThumbnail).url() : urlFor(thumbnail).url()
-            }
-            onLoad={() => setIsLoaded(true)}
-            fill={true}
-            style={{ objectFit: "contain" }}
-            alt={`thumbnail-${title}`}
-          />
+        <div className={classes.meta}>
+          <span>
+            <BiHome /> {translate(`house:${title}.type`)}
+          </span>
+          <span className={classes.dot}>·</span>
+          <span>
+            <BiArea /> {translate(`house:${title}.totalArea`)} m²
+          </span>
         </div>
-      </div>
+      </header>
 
-      <div>
-        <h3>{translate("house:header_description")}</h3>
-        <p>{translate(`house:${title}.description`)}</p>
-      </div>
-      <div className={classes.contentOverview}>
-        <h3>{translate("house:header_overview")}</h3>
-        <div className={classes.table}>
-          <div className={classes.tableColumn}>
-            <div className={classes.tableRow}>
-              <FaBed className={classes.icon} /> Double Bed
-            </div>
-            <div className={classes.tableRow}>
-              <GiCctvCamera className={classes.icon} />
-              Security
-            </div>
-          </div>
-          <div className={classes.tableColumn}>
-            <div className={classes.tableRow}>
-              <BiWifi className={classes.icon} />
-              Wifi
-            </div>
-            <div className={classes.tableRow}>
-              <BiCoffee className={classes.icon} />
-              Coffee Machine
-            </div>
-          </div>
+      {photos.length > 0 && (
+        <PhotoGrid
+          images={photos}
+          label={title}
+          limit={5}
+          showAllLabel={translate("house:show_all_photos", {
+            count: photos.length,
+          })}
+        />
+      )}
+
+      <div className={classes.body}>
+        <div className={classes.main}>
+          <section>
+            <h2>{translate("house:header_description")}</h2>
+            <p>{translate(`house:${title}.description`)}</p>
+          </section>
+
+          <section>
+            <h2>{translate("house:header_overview")}</h2>
+            <ul className={classes.amenities}>
+              {amenities.map(({ key, Icon }) => (
+                <li key={key}>
+                  <Icon className={classes.icon} />
+                  {translate(`house:amenities.${key}`)}
+                </li>
+              ))}
+            </ul>
+          </section>
         </div>
+
+        <aside className={classes.card}>
+          <div className={classes.price}>
+            <span>{translate("home:house_list.price")}</span>
+            <strong>{translate("home:house_list.priceDescription")}</strong>
+          </div>
+          <p className={classes.note}>{translate("house:booking_note")}</p>
+          <Link href="/contact" className={classes.primary}>
+            {translate("house:book_now")}
+          </Link>
+          <Link
+            href="https://wa.me/+905325104828"
+            target="_blank"
+            className={classes.secondary}
+          >
+            <IoLogoWhatsapp /> {translate("house:whatsapp")}
+          </Link>
+          <a href="tel:+905325104828" className={classes.call}>
+            <BiPhone /> {translate("house:call_us")}
+          </a>
+        </aside>
       </div>
-    </div>
+    </article>
   );
 };
 
