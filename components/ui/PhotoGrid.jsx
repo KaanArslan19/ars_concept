@@ -12,7 +12,7 @@ const fullSrc = (item, width) => imageUrl(item, width);
 
 // Mosaic on desktop, horizontal swipe row on mobile, shared lightbox.
 // With `limit`, desktop shows the first `limit` photos and a "show all" button.
-const PhotoGrid = ({ images, label, limit, showAllLabel }) => {
+const PhotoGrid = ({ images, label, limit, showAllLabel, lazy }) => {
   const [openIndex, setOpenIndex] = useState(null);
   const [expanded, setExpanded] = useState(false);
   const [fullWidth, setFullWidth] = useState(1600);
@@ -83,7 +83,7 @@ const PhotoGrid = ({ images, label, limit, showAllLabel }) => {
                 alt={altFor(item, index)}
                 fill
                 unoptimized
-                priority={index < 5}
+                priority={!lazy && index < 5}
                 style={{ objectFit: "cover" }}
               />
             </button>

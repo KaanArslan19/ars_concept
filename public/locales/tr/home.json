@@ -10,13 +10,9 @@
   },
   "hero": {
     "title": "Mandalina bahçeleri arasında huzurlu konaklama",
-    "subtitle": "Gümüldür'de denize beş dakika, 12 ay hizmetinizde.",
-    "cta_houses": "Evleri incele",
-    "cta_contact": "İletişime geç"
+    "subtitle": "Gümüldür'de denize beş dakika, 12 ay hizmetinizde."
   },
   "house_list": {
-    "header": "Evlerimiz",
-    "description": "Gümüldür'ün dünyaca ünlü mandalina bahçeleri içinde, denize 5 dk uzaklıkta konumlandırılmış, 12 ay ev rahatlığında hizmet veren bir tesis.",
     "type": "Daire Tipi",
     "totalArea": "Net Alan",
     "price": "Fiyat",
@@ -26,6 +22,17 @@
   "blog_list": {
     "header": "Mutlaka Görmelisiniz",
     "description": "Gelin Gümüldür ve yakınındaki görülmeye değer yerleri birlikte tanıyalım."
+  },
+  "gallery_teaser": {
+    "header": "Biraz etrafa bakın",
+    "description": "Ars Concept'te odalar, etkinlikler ve gündelik anlar.",
+    "cta": "Tüm fotoğraflar"
+  },
+  "cta": {
+    "title": "Konaklamaya hazır mısınız?",
+    "text": "Müsaitlik ve fiyatlar için bize yazın.",
+    "whatsapp": "WhatsApp'tan yazın",
+    "contact": "İletişim formu"
   },
   "footer": {
     "header": "İletişim"

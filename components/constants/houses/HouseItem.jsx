@@ -19,8 +19,9 @@ const HouseItem = (props) => {
             src={imageUrl(props.thumbnail, 800)}
             alt={props.title}
             fill
+            priority={props.priority}
             style={{ objectFit: "cover" }}
-            sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 400px"
+            sizes={props.sizes}
           />
         </div>
 
