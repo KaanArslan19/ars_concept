@@ -8,6 +8,12 @@
   "slider": {
     "slogan": "Your home in Gumuldur"
   },
+  "hero": {
+    "title": "Calm stays among the mandarin gardens",
+    "subtitle": "Five minutes from the sea in Gümüldür, open all year round.",
+    "cta_houses": "View houses",
+    "cta_contact": "Contact us"
+  },
   "house_list": {
     "header": "Our Houses",
     "description": "Located in the world-famous mandarin gardens of Gümüldür, 5 minutes from the sea, it is a facility that serves 12 months in the comfort of home.",
