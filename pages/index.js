@@ -4,9 +4,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { client } from "@/client";
 
-export default function HomePage({ listings, blogs }) {
+export default function HomePage({ listings, blogs, galleryPreview }) {
   const { t: translate } = useTranslation("meta");
-  console.log(listings);
   return (
     <>
       <Head>
@@ -20,22 +19,30 @@ export default function HomePage({ listings, blogs }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon_ars.ico" />
       </Head>
-      <Home listings={listings} blogs={blogs} />
+      <Home listings={listings} blogs={blogs} galleryPreview={galleryPreview} />
     </>
   );
 }
 export async function getStaticProps({ locale }) {
   const listingsQuery = '*[_type == "records"]';
   const blogsQuery = '*[_type == "blogs"]';
+  // Rooms + events only: the hero already shows the house exteriors.
+  const galleryQuery =
+    '*[_type == "gallery"][0]{"events": events[0...2], "rooms": [rooms[0], rooms[18], rooms[1]]}';
 
-  const [listingsData, blogsData] = await Promise.all([
+  const [listingsData, blogsData, galleryData] = await Promise.all([
     client.fetch(listingsQuery),
     client.fetch(blogsQuery),
+    client.fetch(galleryQuery),
   ]);
   return {
     props: {
       listings: listingsData,
       blogs: blogsData,
+      galleryPreview: [
+        ...(galleryData?.events || []),
+        ...(galleryData?.rooms || []),
+      ].filter(Boolean),
       ...(await serverSideTranslations(
         locale,
         ["home", "blog", "house", "meta"],

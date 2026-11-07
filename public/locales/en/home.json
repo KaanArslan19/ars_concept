@@ -10,13 +10,9 @@
   },
   "hero": {
     "title": "Calm stays among the mandarin gardens",
-    "subtitle": "Five minutes from the sea in Gümüldür, open all year round.",
-    "cta_houses": "View houses",
-    "cta_contact": "Contact us"
+    "subtitle": "Five minutes from the sea in Gümüldür, open all year round."
   },
   "house_list": {
-    "header": "Our Houses",
-    "description": "Located in the world-famous mandarin gardens of Gümüldür, 5 minutes from the sea, it is a facility that serves 12 months in the comfort of home.",
     "type": "Flat Type",
     "totalArea": "Total Area",
     "price": "Price",
@@ -26,6 +22,17 @@
   "blog_list": {
     "header": "Worth Checking Out",
     "description": "Let's get to know the worth-seeing places in Gümüldür and its surroundings."
+  },
+  "gallery_teaser": {
+    "header": "A look around",
+    "description": "Rooms, events and everyday moments at Ars Concept.",
+    "cta": "See all photos"
+  },
+  "cta": {
+    "title": "Ready for your stay?",
+    "text": "Message us for availability and prices.",
+    "whatsapp": "Message on WhatsApp",
+    "contact": "Contact form"
   },
   "footer": {
     "header": "Contact"
