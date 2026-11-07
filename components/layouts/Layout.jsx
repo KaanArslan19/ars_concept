@@ -14,6 +14,7 @@ const Layout = (props) => {
             href="https://wa.me/+905325104828"
             target="_blank"
             className={classes.link}
+            aria-label="WhatsApp"
           >
             <IoLogoWhatsapp className={classes.icon} />
           </Link>
