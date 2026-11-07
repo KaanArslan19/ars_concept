@@ -31,7 +31,10 @@
     "header": "İletişim"
   },
   "map": {
-    "direction": "Adrese git"
+    "header": "Konum",
+    "sea": "Denize arabayla 5 dk",
+    "center": "Merkeze arabayla 2 dk",
+    "directions": "Yol tarifi al"
   },
   "faq": {
     "header": "Sık Sorulanlar",

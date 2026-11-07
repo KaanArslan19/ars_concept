@@ -31,7 +31,10 @@
     "header": "Contact"
   },
   "map": {
-    "direction": "Go to the direction"
+    "header": "Where you'll be",
+    "sea": "5 min drive to the sea",
+    "center": "2 min drive to the center",
+    "directions": "Get directions"
   },
   "faq": {
     "header": "F.A.Q.",
