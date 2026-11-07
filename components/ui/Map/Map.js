@@ -1,55 +1,40 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { icon } from "leaflet";
-import Link from "next/link";
-import { Button } from "@chakra-ui/react";
-import { FaDirections } from "react-icons/fa";
-import { useTranslation } from "next-i18next";
+import { Browser, divIcon } from "leaflet";
+import { ADDRESS, DIRECTIONS_URL, LOCATION } from "./location";
+import classes from "./Map.module.scss";
 
-const ICON = icon({
-  iconUrl: "/images/hotel-marker-icon.webp",
-  iconSize: [30, 40],
+const PIN = divIcon({
+  className: classes.pin,
+  html: `<span><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 3 2 12h3v8h5v-6h4v6h5v-8h3z"/></svg></span>`,
+  iconSize: [44, 44],
+  iconAnchor: [22, 22],
+  popupAnchor: [0, -24],
 });
-const Map = () => {
-  const { t: translate } = useTranslation("home");
 
-  return (
-    <MapContainer
-      center={[38.063472, 27.028338]}
-      zoom={14}
-      scrollWheelZoom={false}
-      style={{
-        width: "100%",
-        height: "300px",
-        marginTop: "2rem",
-        marginBottom: "2rem",
-      }}
-    >
-      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      <Marker position={[38.063472, 27.028338]} icon={ICON}>
-        <Popup>
-          <h5>Ars Concept Houses</h5>
-          <span>
-            Address: İnönü Mahallesi, Teyfik Yılmaz Caddesi no:70
-            Gümüldür/Menderes
-          </span>
-        </Popup>
-      </Marker>
-      <Link href="https://goo.gl/maps/srsMMo7GNB2Qvmjp8" target="_blank">
-        <Button
-          position="absolute"
-          zIndex="1000"
-          right="0"
-          mt="2rem"
-          mr="2rem"
-          leftIcon={<FaDirections />}
-          fontSize={{ base: "12px", md: "16px", xl: "20" }}
-        >
-          {translate("home:map.direction")}
-        </Button>
-      </Link>
-    </MapContainer>
-  );
-};
+const Map = () => (
+  <MapContainer
+    center={LOCATION}
+    zoom={14}
+    scrollWheelZoom={false}
+    dragging={!Browser.mobile}
+    className={classes.map}
+  >
+    <TileLayer
+      url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+      maxZoom={19}
+      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    />
+    <Marker position={LOCATION} icon={PIN}>
+      <Popup className={classes.popup}>
+        <strong>Ars Concept Houses</strong>
+        <span>{ADDRESS}</span>
+        <a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
+          Google Maps →
+        </a>
+      </Popup>
+    </Marker>
+  </MapContainer>
+);
 
 export default Map;
